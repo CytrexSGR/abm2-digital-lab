@@ -180,7 +180,7 @@ npm install && npm start
 
 ### 🎮 First Steps
 1. **Open Dashboard**: http://localhost:3000
-2. **Login**: Use `admin` / `abm2_secure_2024!` (change immediately!)
+2. **Login**: Use `cytrex` / `infinimind_secure_2024!` (change immediately!)
 3. **Start Simulation**: Click ▶️ Play button
 4. **Observe Agents**: Explore interactive map
 5. **Adjust Parameters**: Use configuration panel
@@ -446,7 +446,7 @@ npm run lint
 
 **MIT License**
 
-Copyright (c) 2024 ABM² Digital Lab Contributors
+Copyright (c) 2024 Infinimind Creations
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -466,6 +466,12 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+## 👨‍💻 Author & Organization
+
+**Created by**: [Cytrex](https://github.com/cytrex) at [Infinimind Creations](https://github.com/infinimind-creations)
+
+*Infinimind Creations* develops cutting-edge simulation and research platforms that push the boundaries of computational social science and agent-based modeling.
+
 ## 🙏 Acknowledgments
 
 - **[Mesa Framework](https://mesa.readthedocs.io/)** - Agent-Based Modeling foundation
@@ -478,7 +484,8 @@ SOFTWARE.
 
 - **🐛 Bug Reports**: [GitHub Issues](../../issues)
 - **💡 Feature Requests**: [GitHub Discussions](../../discussions)
-- **📧 Email**: [contact@abm2-lab.org](mailto:contact@abm2-lab.org)
+- **📧 Email**: [cytrex@infinimind.dev](mailto:cytrex@infinimind.dev)
+- **🏢 Organization**: [Infinimind Creations](https://github.com/infinimind-creations)
 
 ---
 
@@ -488,7 +495,7 @@ SOFTWARE.
 
 *Agent-Based Modeling • Political Systems • Socio-Economic Dynamics*
 
-[![GitHub Stars](https://img.shields.io/github/stars/org/abm2?style=social)](#)
-[![Contributors](https://img.shields.io/github/contributors/org/abm2)](#)
+[![GitHub Stars](https://img.shields.io/github/stars/infinimind-creations/abm2-digital-lab?style=social)](#)
+[![Contributors](https://img.shields.io/github/contributors/infinimind-creations/abm2-digital-lab)](#)
 
 </div>

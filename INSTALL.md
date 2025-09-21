@@ -6,7 +6,7 @@ Get ABM² Digital Lab running in 5 minutes with authentication and production co
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/yourusername/abm2-digital-lab.git
+git clone https://github.com/infinimind-creations/abm2-digital-lab.git
 cd abm2-digital-lab
 ```
 
@@ -43,7 +43,7 @@ npm start
 
 ### 4. Access Application
 - **URL**: http://localhost:3000
-- **Login**: admin / abm2_secure_2024! (change in .env!)
+- **Login**: cytrex / infinimind_secure_2024! (change in .env!)
 - **Backend API**: http://localhost:8000/docs
 
 ## 🔐 Security Configuration

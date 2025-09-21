@@ -62,6 +62,7 @@ abm2-digital-lab/                 # GitHub repository name
 # 1. Click "New Repository"
 # 2. Name: "abm2-digital-lab"
 # 3. Description: "Political Agent-Based Model Simulation Platform with Authentication"
+# 4. Owner: infinimind-creations
 # 4. Public repository
 # 5. DO NOT initialize with README (we already have one)
 ```
@@ -72,7 +73,7 @@ abm2-digital-lab/                 # GitHub repository name
 cd /home/cytrex/abm2
 
 # Add GitHub remote
-git remote add origin https://github.com/yourusername/abm2-digital-lab.git
+git remote add origin https://github.com/infinimind-creations/abm2-digital-lab.git
 
 # Push to GitHub
 git push -u origin main

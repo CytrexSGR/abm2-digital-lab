@@ -167,22 +167,22 @@ Funktional - Warnings beeinträchtigen nicht die Funktionalität, sollten aber f
 
 **Problem:**
 ```
-Proxy error: Could not proxy request /favicon.ico from 192.168.178.77:3000 to http://192.168.178.55:8000.
+Proxy error: Could not proxy request /favicon.ico from [SERVER_IP]:3000 to http://[WRONG_IP]:8000.
 See https://nodejs.org/api/errors.html#errors_common_system_errors for more information (ECONNREFUSED).
 ```
 
 **Ursache:**
-Die `package.json` hatte eine falsche IP-Adresse im Proxy-Setting (`192.168.178.55` statt `192.168.178.77`).
+Die `package.json` hatte eine falsche IP-Adresse im Proxy-Setting.
 
 **Lösung:**
 1. **package.json** korrigiert:
 ```json
-"proxy": "http://192.168.178.77:8000"
+"proxy": "http://[SERVER_IP]:8000"
 ```
 
 2. **Backend .env** CORS-Settings angepasst:
 ```env
-ALLOWED_ORIGINS=http://localhost:3000,http://127.0.0.1:3000,http://192.168.178.77,http://192.168.178.77:3000
+ALLOWED_ORIGINS=http://localhost:3000,http://127.0.0.1:3000,http://[SERVER_IP],http://[SERVER_IP]:3000
 ```
 
 3. **Services neu gestartet** damit Änderungen wirksam werden.
@@ -238,7 +238,7 @@ Das Frontend verwendete hardcodierte `localhost:8000` URLs in den API-Konfigurat
 **Lösung:**
 1. **Frontend .env Datei erstellt:**
 ```env
-REACT_APP_API_BASE_URL=http://192.168.178.77:8000
+REACT_APP_API_BASE_URL=http://[SERVER_IP]:8000
 ```
 
 2. **Frontend neu gestartet** um Umgebungsvariable zu laden
@@ -249,7 +249,7 @@ REACT_APP_API_BASE_URL=http://192.168.178.77:8000
    - WebSocket-Verbindung funktioniert: `WebSocket /ws" [accepted]`
 
 **Ergebnis:**
-Vollständige Kommunikation zwischen Frontend und Backend über die korrekte IP-Adresse.
+Vollständige Kommunikation zwischen Frontend und Backend über die korrekte Server-IP-Adresse.
 
 ---
 
@@ -257,13 +257,13 @@ Vollständige Kommunikation zwischen Frontend und Backend über die korrekte IP-
 
 Trotz mehrerer Herausforderungen wurde die Installation erfolgreich abgeschlossen:
 
-✅ **Backend läuft auf:** http://192.168.178.77:8000 (und localhost:8000)
-✅ **Frontend läuft auf:** http://192.168.178.77:3000 (und localhost:3000)
-✅ **API Dokumentation:** http://192.168.178.77:8000/docs
+✅ **Backend läuft auf:** http://[SERVER_IP]:8000 (und localhost:8000)
+✅ **Frontend läuft auf:** http://[SERVER_IP]:3000 (und localhost:3000)
+✅ **API Dokumentation:** http://[SERVER_IP]:8000/docs
 
 **Login-Daten:**
 - Username: `admin`
-- Password: `secure_password_123`
+- Password: `[configured in .env file]`
 
 **Funktionalität bestätigt:**
 - ✅ API-Verbindung funktioniert
@@ -273,7 +273,7 @@ Trotz mehrerer Herausforderungen wurde die Installation erfolgreich abgeschlosse
 
 **Netzwerk-Zugang:**
 - Lokal: http://localhost:3000
-- LAN: http://192.168.178.77:3000
+- LAN: http://[SERVER_IP]:3000
 
 ## 11. UI Flickering - Template Dynamics und Economic Explorer
 
@@ -323,7 +323,106 @@ const templateColors: Record<string, string> = {
 
 ---
 
-**Vollständige Problemliste (11 Probleme gelöst):**
+## 12. Nginx Reverse Proxy - WebSocket und API Routing für externen Zugang
+
+**Problem:**
+```
+Externe Zugriffe über http://[PUBLIC_IP]/ fehlgeschlagen:
+- WebSocket: "ws://[PUBLIC_IP]/api/ws connection refused"
+- API: "http://[PUBLIC_IP]/api/api/simulation/data [HTTP/1.1 404 Not Found]"
+- Doppelter /api/ Pfad: REACT_APP_API_BASE_URL + API-Aufrufe ergaben falsche URLs
+```
+
+**Ursache (Analyse nach Debuggen):**
+1. **Doppelte API-Pfade:** `.env` hatte `REACT_APP_API_BASE_URL=http://[PUBLIC_IP]/api`, aber `apiClient.get('/api/simulation/data')` führte zu `http://[PUBLIC_IP]/api/api/simulation/data`
+2. **WebSocket URL-Konstruktion:** `httpApiUrl.replace(/^http/, 'ws').replace('/api', '') + '/ws'` entfernte `/api` fälschlicherweise
+3. **Multiple laufende Frontend-Instanzen:** Cached alte Konfiguration in verschiedenen background processes
+4. **React Build Cache:** Alte .env-Werte im Browser/Build Cache gespeichert
+
+**Lösung:**
+1. **Nginx Konfiguration korrigiert:**
+```nginx
+# nginx configuration file
+server {
+    listen 80;
+    server_name [PUBLIC_IP];
+
+    # Backend API (korrekte Weiterleitung ohne Pfaddoppelung)
+    location /api/ {
+        proxy_pass http://localhost:8000/api/;
+    }
+
+    # WebSocket (korrekte Weiterleitung)
+    location /ws {
+        proxy_pass http://localhost:8000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+    }
+
+    # Frontend (catch-all für React Router)
+    location / {
+        proxy_pass http://localhost:3000;
+    }
+}
+```
+
+2. **Frontend Environment korrigiert:**
+```env
+# Frontend .env file
+# WICHTIG: Ohne /api am Ende um doppelte Pfade zu vermeiden
+REACT_APP_API_BASE_URL=http://[PUBLIC_IP]
+WDS_SOCKET_HOST=localhost
+WDS_SOCKET_PORT=3000
+WDS_SOCKET_PATH=/ws
+```
+
+**KRITISCHE Korrekturen:**
+
+3. **WebSocket URL-Konstruktion korrigiert** in `useConnectionStore.ts`:
+```typescript
+// Vorher (falsch):
+const wsApiUrl = httpApiUrl.replace(/^http/, 'ws').replace('/api', '') + '/ws';
+
+// Nachher (korrekt):
+const wsApiUrl = httpApiUrl.replace(/^http/, 'ws') + '/ws';
+```
+
+4. **Alle Frontend-Prozesse gestoppt und Cache geleert:**
+```bash
+# Alle laufenden npm/node Prozesse killen
+pkill -f "npm\|node"
+
+# React Cache komplett löschen
+rm -rf node_modules/.cache build
+
+# Nur einen einzigen Frontend-Prozess starten
+GENERATE_SOURCEMAP=false PORT=3001 npm start
+```
+
+3. **Nginx aktiviert:**
+```bash
+sudo cp [nginx-config-file] /etc/nginx/sites-available/abm2-digital-lab
+sudo ln -s /etc/nginx/sites-available/abm2-digital-lab /etc/nginx/sites-enabled/
+sudo nginx -t && sudo systemctl reload nginx
+```
+
+4. **Admin-Passwort aktualisiert** für bessere Sicherheit
+
+**Ergebnis:**
+- ✅ **Externer Zugang:** http://[PUBLIC_IP]/ funktioniert ohne Portnummern
+- ✅ **API Calls:** Korrekte Routen ohne doppelte `/api/` Pfade
+- ✅ **WebSocket:** Real-time Verbindung über ws://[PUBLIC_IP]/ws
+- ✅ **Single Port:** Komplette Anwendung über Port 80 zugänglich
+- ✅ **Internet-Zugang:** Bereit für Router Port-Forwarding
+
+**Router Konfiguration für Internet-Zugang:**
+- Port 80 (HTTP) weiterleiten an [SERVER_IP]:80
+- Optional: Port 443 (HTTPS) für SSL-Zertifikat
+
+---
+
+**Vollständige Problemliste (12 Probleme gelöst):**
 1. Missing python3-venv package
 2. Missing networkx dependency
 3. FastAPI Depends import fehler
@@ -334,6 +433,7 @@ const templateColors: Record<string, string> = {
 8. Frontend Proxy - Falsche IP-Adresse
 9. TypeScript Type Compatibility Error
 10. WebSocket und API Verbindungsfehler - Hardcodierte localhost URLs
-11. **UI Flickering - Template Dynamics und Economic Explorer**
+11. UI Flickering - Template Dynamics und Economic Explorer
+12. **Nginx Reverse Proxy - WebSocket und API Routing für externen Zugang**
 
-Die meisten Probleme resultierten aus unvollständigen Dependencies, fehlenden Konfigurationsdateien, falschen IP-Konfigurationen, hardcodierten URLs und React Performance-Problemen, die typisch für Entwicklungsrepositories sind. Alle kritischen Probleme wurden erfolgreich behoben und das System ist vollständig funktionsfähig mit optimaler Performance.
+Die meisten Probleme resultierten aus unvollständigen Dependencies, fehlenden Konfigurationsdateien, falschen IP-Konfigurationen, hardcodierten URLs, React Performance-Problemen und Nginx Routing-Konfiguration, die typisch für Entwicklungsrepositories und Produktionsdeployments sind. Alle kritischen Probleme wurden erfolgreich behoben und das System ist vollständig funktionsfähig mit optimaler Performance und externem Zugang über einen einzigen Port.

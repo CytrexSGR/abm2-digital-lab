@@ -180,7 +180,7 @@ npm install && npm start
 
 ### 🎮 First Steps
 1. **Open Dashboard**: http://localhost:3000
-2. **Login**: Use `cytrex` / `infinimind_secure_2024!` (change immediately!)
+2. **Login**: Use default credentials (see backend/.env.example for setup)
 3. **Start Simulation**: Click ▶️ Play button
 4. **Observe Agents**: Explore interactive map
 5. **Adjust Parameters**: Use configuration panel

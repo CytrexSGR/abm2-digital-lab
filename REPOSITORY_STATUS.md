@@ -22,7 +22,7 @@ git push -u origin main
 - ✅ Login interface with session persistence
 - ✅ Protected critical endpoints
 - ✅ Environment-based credential management
-- ✅ Default credentials: `cytrex` / `infinimind_secure_2024!`
+- ✅ Default credentials: Configure in backend/.env
 
 ### 📋 Documentation (English)
 - ✅ **README.md** - Professional main documentation with badges

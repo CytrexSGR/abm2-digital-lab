@@ -43,7 +43,7 @@ npm start
 
 ### 4. Access Application
 - **URL**: http://localhost:3000
-- **Login**: cytrex / infinimind_secure_2024! (change in .env!)
+- **Login**: Configure in backend/.env (see .env.example)
 - **Backend API**: http://localhost:8000/docs
 
 ## 🔐 Security Configuration

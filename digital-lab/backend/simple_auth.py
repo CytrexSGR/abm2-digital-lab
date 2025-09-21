@@ -8,7 +8,7 @@ security = HTTPBasic()
 
 # Single user credentials from environment
 ADMIN_USERNAME = os.getenv("ADMIN_USERNAME", "admin")
-ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD", "abm2_2024!")
+ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD", "change_me_please!")
 
 def authenticate_user(credentials: HTTPBasicCredentials = Depends(security)) -> str:
     """

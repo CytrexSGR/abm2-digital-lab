@@ -1,6 +1,6 @@
 # ABM² Digital Lab - Political Agent-Based Model Simulation Platform
 
-[![Status](https://img.shields.io/badge/Status-Production%20Ready-green.svg)](#)
+[![Status](https://img.shields.io/badge/Status-Fully%20Functional-green.svg)](#)
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](#)
 [![React](https://img.shields.io/badge/React-18.3-blue.svg)](#)
 [![FastAPI](https://img.shields.io/badge/FastAPI-Latest-green.svg)](#)
@@ -139,7 +139,9 @@ abm2/
 │       └── build/                # Production build output
 │
 ├── 📋 README.md                    # This documentation
-├── 🚀 SIMPLE_DEPLOYMENT.md         # 🆕 Production deployment guide
+├── 🚀 SIMPLE_DEPLOYMENT.md         # Quick deployment guide
+├── 🔧 DEPLOYMENT_PRODUCTION.md     # 🆕 Comprehensive production deployment with troubleshooting
+├── 🐛 fehler.md                    # Troubleshooting documentation (German)
 └── 📄 LICENSE                     # MIT License
 ```
 
@@ -329,7 +331,9 @@ cd ../frontend && pm2 serve build 3000 --name abm2-frontend
 pm2 save && pm2 startup
 ```
 
-For detailed deployment instructions, see [SIMPLE_DEPLOYMENT.md](SIMPLE_DEPLOYMENT.md).
+For detailed deployment instructions, see:
+- **[SIMPLE_DEPLOYMENT.md](SIMPLE_DEPLOYMENT.md)** - Quick deployment guide
+- **[DEPLOYMENT_PRODUCTION.md](DEPLOYMENT_PRODUCTION.md)** - Comprehensive production deployment with troubleshooting
 
 ## 🌐 API Documentation
 
@@ -479,6 +483,14 @@ SOFTWARE.
 - **[React Team](https://react.dev/)** - Frontend UI framework
 - **[Deck.GL Team](https://deck.gl/)** - WebGL visualizations
 - **Open Source Community** - Countless contributors and maintainers
+
+## 🛠️ Troubleshooting
+
+If you encounter issues during installation or deployment:
+
+- **[DEPLOYMENT_PRODUCTION.md](DEPLOYMENT_PRODUCTION.md)** - Complete troubleshooting guide with solutions for 12+ common issues
+- **[fehler.md](fehler.md)** - Detailed German documentation of solved installation problems
+- Both documents cover networking, dependencies, configuration, and performance optimization
 
 ## 📞 Support & Contact
 

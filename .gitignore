@@ -188,3 +188,6 @@ nginx.conf
 # System files
 *.pid
 *.sock
+
+# Claude Code configuration (contains sensitive info)
+CLAUDE.md

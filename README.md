@@ -141,7 +141,6 @@ abm2/
 ├── 📋 README.md                    # This documentation
 ├── 🚀 SIMPLE_DEPLOYMENT.md         # Quick deployment guide
 ├── 🔧 DEPLOYMENT_PRODUCTION.md     # 🆕 Comprehensive production deployment with troubleshooting
-├── 🐛 fehler.md                    # Troubleshooting documentation (German)
 └── 📄 LICENSE                     # MIT License
 ```
 
@@ -489,8 +488,8 @@ SOFTWARE.
 If you encounter issues during installation or deployment:
 
 - **[DEPLOYMENT_PRODUCTION.md](DEPLOYMENT_PRODUCTION.md)** - Complete troubleshooting guide with solutions for 12+ common issues
-- **[fehler.md](fehler.md)** - Detailed German documentation of solved installation problems
-- Both documents cover networking, dependencies, configuration, and performance optimization
+- Covers networking, dependencies, configuration, and performance optimization
+- All known installation issues have been resolved and documented
 
 ## 📞 Support & Contact
 

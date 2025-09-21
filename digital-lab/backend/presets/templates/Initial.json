@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Left-Wing",
+    "x_min": -1,
+    "x_max": -0.3,
+    "y_min": -1,
+    "y_max": 1
+  },
+  {
+    "name": "Right-Wing",
+    "x_min": 0.3,
+    "x_max": 1,
+    "y_min": -1,
+    "y_max": 1
+  },
+  {
+    "name": "Libertarian",
+    "x_min": -1,
+    "x_max": 1,
+    "y_min": 0.3,
+    "y_max": 1
+  },
+  {
+    "name": "Authoritarian",
+    "x_min": -1,
+    "x_max": 1,
+    "y_min": -1,
+    "y_max": -0.3
+  }
+]

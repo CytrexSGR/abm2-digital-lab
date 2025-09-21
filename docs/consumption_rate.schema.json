@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "consumption_rate schema",
+  "type": "object",
+  "properties": {
+    "zeitpraeferenzrate": {"type": "number", "minimum": 0.0, "maximum": 1.0},
+    "risikoaversion": {"type": "number", "minimum": 0.0, "maximum": 1.0},
+    "base_consumption_rate": {"type": "number", "minimum": 0.0, "maximum": 1.0},
+    "zeitpraeferenz_sensitivity": {"type": "number", "minimum": 0.0},
+    "risikoaversion_sensitivity": {"type": "number", "minimum": 0.0}
+  },
+  "required": [
+    "zeitpraeferenzrate",
+    "risikoaversion",
+    "base_consumption_rate",
+    "zeitpraeferenz_sensitivity",
+    "risikoaversion_sensitivity"
+  ],
+  "additionalProperties": false,
+  "output": {"type": "number", "minimum": 0.0, "maximum": 1.0},
+  "whitelist_functions": ["+", "-", "*", "Min", "Max"]
+}

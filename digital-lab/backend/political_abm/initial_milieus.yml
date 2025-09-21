@@ -1,0 +1,408 @@
+- attribute_distributions:
+    alter:
+      alpha: null
+      beta: null
+      max: 35.0
+      mean: null
+      min: 18.0
+      std_dev: null
+      type: uniform_int
+    altruism_factor:
+      alpha: 8.0
+      beta: 2.0
+      max: null
+      mean: null
+      min: null
+      std_dev: null
+      type: beta
+    bildung:
+      alpha: 4.0
+      beta: 5.0
+      max: null
+      mean: null
+      min: null
+      std_dev: null
+      type: beta
+    freedom_preference:
+      alpha: 2.0
+      beta: 8.0
+      max: null
+      mean: null
+      min: null
+      std_dev: null
+      type: beta
+    kognitive_kapazitaet:
+      alpha: null
+      beta: null
+      max: null
+      mean: 0.6
+      min: null
+      std_dev: 0.15
+      type: normal
+    risikoaversion:
+      alpha: null
+      beta: null
+      max: 0.4
+      mean: null
+      min: 0.1
+      std_dev: null
+      type: uniform_float
+    vertraeglichkeit:
+      alpha: 3.0
+      beta: 7.0
+      max: null
+      mean: null
+      min: null
+      std_dev: null
+      type: beta
+    zeitpraeferenzrate:
+      alpha: null
+      beta: null
+      max: 0.9
+      mean: null
+      min: 0.6
+      std_dev: null
+      type: uniform_float
+  color: '#8B0000'
+  name: Linksradikal
+  proportion: 0.16666666666666666
+- attribute_distributions:
+    alter:
+      alpha: null
+      beta: null
+      max: 50.0
+      mean: null
+      min: 25.0
+      std_dev: null
+      type: uniform_int
+    altruism_factor:
+      alpha: 7.0
+      beta: 3.0
+      max: null
+      mean: null
+      min: null
+      std_dev: null
+      type: beta
+    bildung:
+      alpha: 7.0
+      beta: 3.0
+      max: null
+      mean: null
+      min: null
+      std_dev: null
+      type: beta
+    freedom_preference:
+      alpha: 7.0
+      beta: 3.0
+      max: null
+      mean: null
+      min: null
+      std_dev: null
+      type: beta
+    kognitive_kapazitaet:
+      alpha: null
+      beta: null
+      max: null
+      mean: 0.7
+      min: null
+      std_dev: 0.15
+      type: normal
+    risikoaversion:
+      alpha: null
+      beta: null
+      max: 0.6
+      mean: null
+      min: 0.3
+      std_dev: null
+      type: uniform_float
+    vertraeglichkeit:
+      alpha: 7.0
+      beta: 3.0
+      max: null
+      mean: null
+      min: null
+      std_dev: null
+      type: beta
+    zeitpraeferenzrate:
+      alpha: null
+      beta: null
+      max: 0.7
+      mean: null
+      min: 0.4
+      std_dev: null
+      type: uniform_float
+  color: '#DC143C'
+  name: Links
+  proportion: 0.16666666666666666
+- attribute_distributions:
+    alter:
+      alpha: null
+      beta: null
+      max: 60.0
+      mean: null
+      min: 30.0
+      std_dev: null
+      type: uniform_int
+    altruism_factor:
+      alpha: null
+      beta: null
+      max: null
+      mean: 0.5
+      min: null
+      std_dev: 0.1
+      type: normal
+    bildung:
+      alpha: null
+      beta: null
+      max: null
+      mean: 0.5
+      min: null
+      std_dev: 0.15
+      type: normal
+    freedom_preference:
+      alpha: null
+      beta: null
+      max: null
+      mean: 0.5
+      min: null
+      std_dev: 0.1
+      type: normal
+    kognitive_kapazitaet:
+      alpha: null
+      beta: null
+      max: null
+      mean: 0.5
+      min: null
+      std_dev: 0.15
+      type: normal
+    risikoaversion:
+      alpha: null
+      beta: null
+      max: 0.8
+      mean: null
+      min: 0.4
+      std_dev: null
+      type: uniform_float
+    vertraeglichkeit:
+      alpha: null
+      beta: null
+      max: null
+      mean: 0.5
+      min: null
+      std_dev: 0.15
+      type: normal
+    zeitpraeferenzrate:
+      alpha: null
+      beta: null
+      max: 0.5
+      mean: null
+      min: 0.2
+      std_dev: null
+      type: uniform_float
+  color: '#000000'
+  name: Mitte
+  proportion: 0.16666666666666666
+- attribute_distributions:
+    alter:
+      alpha: null
+      beta: null
+      max: 65.0
+      mean: null
+      min: 35.0
+      std_dev: null
+      type: uniform_int
+    altruism_factor:
+      alpha: 3.0
+      beta: 7.0
+      max: null
+      mean: null
+      min: null
+      std_dev: null
+      type: beta
+    bildung:
+      alpha: 8.0
+      beta: 2.0
+      max: null
+      mean: null
+      min: null
+      std_dev: null
+      type: beta
+    freedom_preference:
+      alpha: 8.0
+      beta: 2.0
+      max: null
+      mean: null
+      min: null
+      std_dev: null
+      type: beta
+    kognitive_kapazitaet:
+      alpha: null
+      beta: null
+      max: null
+      mean: 0.75
+      min: null
+      std_dev: 0.15
+      type: normal
+    risikoaversion:
+      alpha: null
+      beta: null
+      max: 0.5
+      mean: null
+      min: 0.1
+      std_dev: null
+      type: uniform_float
+    vertraeglichkeit:
+      alpha: 4.0
+      beta: 6.0
+      max: null
+      mean: null
+      min: null
+      std_dev: null
+      type: beta
+    zeitpraeferenzrate:
+      alpha: null
+      beta: null
+      max: 0.4
+      mean: null
+      min: 0.1
+      std_dev: null
+      type: uniform_float
+  color: '#FFD700'
+  name: Liberal
+  proportion: 0.16666666666666666
+- attribute_distributions:
+    alter:
+      alpha: null
+      beta: null
+      max: 70.0
+      mean: null
+      min: 40.0
+      std_dev: null
+      type: uniform_int
+    altruism_factor:
+      alpha: 4.0
+      beta: 6.0
+      max: null
+      mean: null
+      min: null
+      std_dev: null
+      type: beta
+    bildung:
+      alpha: 3.0
+      beta: 4.0
+      max: null
+      mean: null
+      min: null
+      std_dev: null
+      type: beta
+    freedom_preference:
+      alpha: 3.0
+      beta: 7.0
+      max: null
+      mean: null
+      min: null
+      std_dev: null
+      type: beta
+    kognitive_kapazitaet:
+      alpha: null
+      beta: null
+      max: null
+      mean: 0.45
+      min: null
+      std_dev: 0.15
+      type: normal
+    risikoaversion:
+      alpha: null
+      beta: null
+      max: 0.9
+      mean: null
+      min: 0.6
+      std_dev: null
+      type: uniform_float
+    vertraeglichkeit:
+      alpha: 6.0
+      beta: 4.0
+      max: null
+      mean: null
+      min: null
+      std_dev: null
+      type: beta
+    zeitpraeferenzrate:
+      alpha: null
+      beta: null
+      max: 0.5
+      mean: null
+      min: 0.2
+      std_dev: null
+      type: uniform_float
+  color: '#0000FF'
+  name: Rechts
+  proportion: 0.16666666666666666
+- attribute_distributions:
+    alter:
+      alpha: null
+      beta: null
+      max: 60.0
+      mean: null
+      min: 30.0
+      std_dev: null
+      type: uniform_int
+    altruism_factor:
+      alpha: 2.0
+      beta: 8.0
+      max: null
+      mean: null
+      min: null
+      std_dev: null
+      type: beta
+    bildung:
+      alpha: 2.0
+      beta: 6.0
+      max: null
+      mean: null
+      min: null
+      std_dev: null
+      type: beta
+    freedom_preference:
+      alpha: 2.0
+      beta: 8.0
+      max: null
+      mean: null
+      min: null
+      std_dev: null
+      type: beta
+    kognitive_kapazitaet:
+      alpha: null
+      beta: null
+      max: null
+      mean: 0.4
+      min: null
+      std_dev: 0.15
+      type: normal
+    risikoaversion:
+      alpha: null
+      beta: null
+      max: 1.0
+      mean: null
+      min: 0.7
+      std_dev: null
+      type: uniform_float
+    vertraeglichkeit:
+      alpha: 8.0
+      beta: 2.0
+      max: null
+      mean: null
+      min: null
+      std_dev: null
+      type: beta
+    zeitpraeferenzrate:
+      alpha: null
+      beta: null
+      max: 0.6
+      mean: null
+      min: 0.3
+      std_dev: null
+      type: uniform_float
+  color: '#8B4513'
+  name: Rechtsextrem
+  proportion: 0.16666666666666666

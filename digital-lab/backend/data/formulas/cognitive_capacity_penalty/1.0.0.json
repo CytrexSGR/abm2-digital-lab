@@ -1,0 +1,117 @@
+{
+  "version": "1.0.0",
+  "inputs": [
+    {
+      "name": "vermoegen"
+    },
+    {
+      "name": "basis_capacity"
+    },
+    {
+      "name": "wealth_threshold_cognitive_stress"
+    },
+    {
+      "name": "max_cognitive_penalty"
+    }
+  ],
+  "expression": "Min(Max(basis_capacity * (1 - Max(0, (wealth_threshold_cognitive_stress - vermoegen) / wealth_threshold_cognitive_stress) * max_cognitive_penalty), 0.0), 1.0)",
+  "allowed_symbols": [
+    "Min",
+    "Max",
+    "+",
+    "-",
+    "*",
+    "/"
+  ],
+  "tests": {
+    "defaults": {},
+    "golden": [
+      {
+        "name": "above_threshold_no_penalty",
+        "input": {
+          "vermoegen": 6000.0,
+          "basis_capacity": 0.8,
+          "wealth_threshold_cognitive_stress": 5000.0,
+          "max_cognitive_penalty": 0.5
+        },
+        "expected": 0.8,
+        "tolerance": 1e-12
+      },
+      {
+        "name": "at_threshold_no_penalty",
+        "input": {
+          "vermoegen": 5000.0,
+          "basis_capacity": 0.8,
+          "wealth_threshold_cognitive_stress": 5000.0,
+          "max_cognitive_penalty": 0.5
+        },
+        "expected": 0.8,
+        "tolerance": 1e-12
+      },
+      {
+        "name": "half_threshold_partial_penalty",
+        "input": {
+          "vermoegen": 2500.0,
+          "basis_capacity": 0.8,
+          "wealth_threshold_cognitive_stress": 5000.0,
+          "max_cognitive_penalty": 0.5
+        },
+        "expected": 0.6,
+        "tolerance": 1e-12
+      },
+      {
+        "name": "zero_wealth_max_penalty",
+        "input": {
+          "vermoegen": 0.0,
+          "basis_capacity": 0.8,
+          "wealth_threshold_cognitive_stress": 5000.0,
+          "max_cognitive_penalty": 0.5
+        },
+        "expected": 0.4,
+        "tolerance": 1e-12
+      },
+      {
+        "name": "full_penalty_clamps_to_zero",
+        "input": {
+          "vermoegen": 0.0,
+          "basis_capacity": 0.4,
+          "wealth_threshold_cognitive_stress": 5000.0,
+          "max_cognitive_penalty": 1.0
+        },
+        "expected": 0.0,
+        "tolerance": 1e-12
+      }
+    ],
+    "properties": [
+      {
+        "name": "monotonic_increasing_in_wealth",
+        "type": "monotonic",
+        "direction": "increasing",
+        "cases": [
+          {
+            "input": {
+              "vermoegen": 1000.0,
+              "basis_capacity": 0.8,
+              "wealth_threshold_cognitive_stress": 5000.0,
+              "max_cognitive_penalty": 0.5
+            }
+          },
+          {
+            "input": {
+              "vermoegen": 3000.0,
+              "basis_capacity": 0.8,
+              "wealth_threshold_cognitive_stress": 5000.0,
+              "max_cognitive_penalty": 0.5
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "metadata": {
+    "description": "Cognitive capacity penalty based on wealth stress. Below wealth threshold, cognitive capacity decreases linearly",
+    "created_by": "migration_tool",
+    "released_by": "migration_tool"
+  },
+  "status": "released"
+}

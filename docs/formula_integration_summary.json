@@ -1,0 +1,272 @@
+{
+  "project_root": "/home/cytrex/abm2",
+  "backend": {
+    "entrypoints": [
+      "digital-lab/backend/main.py"
+    ],
+    "mesa_paths": [
+      "digital-lab/backend/political_abm"
+    ],
+    "config_paths": [
+      "digital-lab/backend/config"
+    ],
+    "requirements_missing": [
+      "sympy"
+    ],
+    "sympy_present": true,
+    "sympy_version": "1.12"
+  },
+  "frontend": {
+    "stack": "CRA/React",
+    "path": "digital-lab/frontend",
+    "math_editor_integration": "math.js + CodeMirror/Monaco feasible"
+  },
+  "hotspots": [
+    {
+      "file": "political_abm/agents.py",
+      "line": 22,
+      "func": "decide_and_act",
+      "inputs": [
+        "ersparnis",
+        "params"
+      ],
+      "rng": true,
+      "side_effects": [
+        "state.vermoegen"
+      ],
+      "vectorizable": false,
+      "calls_per_step": "~N_agents"
+    },
+    {
+      "file": "political_abm/agents.py",
+      "line": 60,
+      "func": "learn",
+      "inputs": [
+        "delta_u_ego",
+        "delta_u_sozial",
+        "env_health",
+        "biome_capacity",
+        "params"
+      ],
+      "rng": false,
+      "side_effects": [
+        "state.altruism_factor"
+      ],
+      "vectorizable": true,
+      "calls_per_step": "~N_agents"
+    },
+    {
+      "file": "political_abm/agents.py",
+      "line": 87,
+      "func": "learn_from_media",
+      "inputs": [
+        "source",
+        "influence_factor",
+        "params"
+      ],
+      "rng": false,
+      "side_effects": [
+        "state.freedom_preference"
+      ],
+      "vectorizable": true,
+      "calls_per_step": "~N_agents"
+    },
+    {
+      "file": "political_abm/agents.py",
+      "line": 111,
+      "func": "update_psychological_states",
+      "inputs": [
+        "params"
+      ],
+      "rng": false,
+      "side_effects": [
+        "state.effektive_kognitive_kapazitaet",
+        "state.risikoaversion"
+      ],
+      "vectorizable": true,
+      "calls_per_step": "~N_agents"
+    },
+    {
+      "file": "political_abm/types.py",
+      "line": 54,
+      "func": "calculate_political_position",
+      "inputs": [
+        "state"
+      ],
+      "rng": false,
+      "side_effects": [],
+      "vectorizable": true
+    },
+    {
+      "file": "political_abm/managers/resource_manager.py",
+      "line": 12,
+      "func": "_handle_consumption_saving",
+      "inputs": [
+        "state",
+        "params"
+      ],
+      "rng": false,
+      "side_effects": [
+        "state.vermoegen",
+        "state.konsumquote",
+        "state.ersparnis"
+      ],
+      "vectorizable": true
+    },
+    {
+      "file": "political_abm/managers/hazard_manager.py",
+      "line": 12,
+      "func": "trigger_events",
+      "inputs": [
+        "hazard_prob"
+      ],
+      "rng": true,
+      "side_effects": [
+        "state.vermoegen",
+        "state.einkommen"
+      ],
+      "vectorizable": false
+    },
+    {
+      "file": "political_abm/managers/media_manager.py",
+      "line": 20,
+      "func": "select_source_for_agent",
+      "inputs": [
+        "agent_state"
+      ],
+      "rng": true,
+      "side_effects": [],
+      "vectorizable": true
+    },
+    {
+      "file": "political_abm/simulation_cycle.py",
+      "line": 135,
+      "func": "_update_environment_parameters",
+      "inputs": [
+        "investments",
+        "altruism",
+        "base_params"
+      ],
+      "rng": false,
+      "side_effects": [
+        "model.effective_*"
+      ],
+      "vectorizable": true
+    },
+    {
+      "file": "political_abm/model.py",
+      "line": 25,
+      "func": "gini",
+      "inputs": [
+        "x"
+      ],
+      "rng": false,
+      "side_effects": [],
+      "vectorizable": "partial"
+    }
+  ],
+  "unsafe_eval_usage": [],
+  "rng_sites": [
+    "agents.decide_and_act/random.random",
+    "hazard_manager.trigger_events/random.random",
+    "utils.generate_attribute_value/np.random.*",
+    "media_manager.select_source_for_agent/random.choices"
+  ],
+  "performance": {
+    "profile_file": "profiling.txt",
+    "top": [
+      {
+        "fn": "numpy.linalg.norm",
+        "calls": 45000,
+        "tottime": 0.095
+      },
+      {
+        "fn": "political_abm/model.py:get_model_report",
+        "calls": 50,
+        "tottime": 0.085
+      },
+      {
+        "fn": "political_abm/media_manager.py:select_source_for_agent",
+        "calls": 7500,
+        "tottime": 0.062
+      },
+      {
+        "fn": "political_abm/types.py:calculate_political_position",
+        "calls": 45000,
+        "tottime": 0.049
+      },
+      {
+        "fn": "political_abm/model.py:gini",
+        "calls": 100,
+        "tottime": 0.045
+      }
+    ],
+    "total_seconds": 0.919,
+    "steps": 50,
+    "agents": 150
+  },
+  "sympy_mapping": {
+    "allowed_funcs": [
+      "+",
+      "-",
+      "*",
+      "/",
+      "**",
+      "Min",
+      "Max",
+      "exp",
+      "log"
+    ],
+    "clip": "Min(Max(x,a), b)",
+    "extras": {
+      "sigmoid": "1/(1+exp(-x))",
+      "softplus": "log(1+exp(x))"
+    }
+  },
+  "registry_design": {
+    "storage": "JSON (start) or DB",
+    "fields": [
+      "name",
+      "inputs",
+      "expression",
+      "allowed_symbols",
+      "tests",
+      "version",
+      "created_by",
+      "released_at",
+      "compiled_hash"
+    ],
+    "cache": "LRU by (name, version)",
+    "vectorize": true
+  },
+  "api_endpoints": [
+    "GET /formulas/{name}",
+    "PUT /formulas/{name}",
+    "POST /validate",
+    "POST /compile",
+    "POST /test",
+    "POST /release",
+    "GET /versions/{name}"
+  ],
+  "migration_plan": [
+    "Extract altruism_update as pure function",
+    "Implement minimal registry + validator + compiler",
+    "Wire model to registry (fixed version)",
+    "Migrate consumption/risk/media/regen/hazard",
+    "Batch evaluate + cache",
+    "Add governance: roles, Audit, persistence"
+  ],
+  "risks": [
+    "Overhead from registry",
+    "Validation gaps",
+    "Governance complexity"
+  ],
+  "scores": {
+    "security": 5,
+    "separation": 4,
+    "performance": 4,
+    "sympy_compat": 5,
+    "frontend_integration": 4,
+    "governance": 3
+  }
+}

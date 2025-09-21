@@ -1,0 +1,15 @@
+{
+  "workflow": ".github/workflows/registry.yml",
+  "checks": [
+    "health",
+    "validate",
+    "compile",
+    "test",
+    "release",
+    "pin",
+    "mini-regression <=1e-9",
+    "overhead <=10%",
+    "metrics presence"
+  ],
+  "status": "configured"
+}

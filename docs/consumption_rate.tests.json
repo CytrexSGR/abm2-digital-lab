@@ -1,0 +1,49 @@
+{
+  "defaults": {},
+  "golden": [
+    {
+      "name": "baseline_equals_base_rate",
+      "input": {"zeitpraeferenzrate": 0.5, "risikoaversion": 0.5, "base_consumption_rate": 0.3, "zeitpraeferenz_sensitivity": 0.4, "risikoaversion_sensitivity": 0.2},
+      "expected": 0.3,
+      "tolerance": 1e-12
+    },
+    {
+      "name": "upper_clip",
+      "input": {"zeitpraeferenzrate": 1.0, "risikoaversion": 1.0, "base_consumption_rate": 0.9, "zeitpraeferenz_sensitivity": 1.0, "risikoaversion_sensitivity": 1.0},
+      "expected": 1.0,
+      "tolerance": 0.0
+    },
+    {
+      "name": "lower_clip",
+      "input": {"zeitpraeferenzrate": 0.0, "risikoaversion": 0.0, "base_consumption_rate": 0.0, "zeitpraeferenz_sensitivity": 1.0, "risikoaversion_sensitivity": 1.0},
+      "expected": 0.0,
+      "tolerance": 0.0
+    }
+  ],
+  "properties": [
+    {
+      "name": "range_is_clipped",
+      "type": "range",
+      "min": 0.0,
+      "max": 1.0
+    },
+    {
+      "name": "monotonic_in_zeitpraeferenzrate",
+      "type": "monotonic",
+      "direction": "increasing",
+      "cases": [
+        {"input": {"zeitpraeferenzrate": 0.3, "risikoaversion": 0.5, "base_consumption_rate": 0.3, "zeitpraeferenz_sensitivity": 0.4, "risikoaversion_sensitivity": 0.2}},
+        {"input": {"zeitpraeferenzrate": 0.7, "risikoaversion": 0.5, "base_consumption_rate": 0.3, "zeitpraeferenz_sensitivity": 0.4, "risikoaversion_sensitivity": 0.2}}
+      ]
+    },
+    {
+      "name": "monotonic_in_risikoaversion",
+      "type": "monotonic",
+      "direction": "increasing",
+      "cases": [
+        {"input": {"zeitpraeferenzrate": 0.5, "risikoaversion": 0.3, "base_consumption_rate": 0.3, "zeitpraeferenz_sensitivity": 0.4, "risikoaversion_sensitivity": 0.2}},
+        {"input": {"zeitpraeferenzrate": 0.5, "risikoaversion": 0.7, "base_consumption_rate": 0.3, "zeitpraeferenz_sensitivity": 0.4, "risikoaversion_sensitivity": 0.2}}
+      ]
+    }
+  ]
+}

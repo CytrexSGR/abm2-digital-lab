@@ -1,0 +1,38 @@
+name: PROD Alert Probe
+
+on:
+  schedule:
+    - cron: '0 7 * * 1'
+  workflow_dispatch:
+
+jobs:
+  alert_probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run alert probe on remote
+        uses: appleboy/ssh-action@v1.0.3
+        env:
+          BACKEND_URL: http://127.0.0.1:8000
+        with:
+          host: ${{ secrets.PROD_SSH_HOST }}
+          username: ${{ secrets.PROD_SSH_USER }}
+          key: ${{ secrets.PROD_SSH_KEY }}
+          script: |
+            export BACKEND_URL
+            bash /opt/digital-lab/scripts/prod_alert_probe.sh
+      - name: Copy alert probe outputs
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.PROD_SSH_HOST }}
+          username: ${{ secrets.PROD_SSH_USER }}
+          key: ${{ secrets.PROD_SSH_KEY }}
+          source: /opt/digital-lab/runs/alert_probe_*.txt
+          target: runs/
+      - name: Slack notify
+        if: ${{ env.SLACK_WEBHOOK != '' }}
+        uses: slackapi/slack-github-action@v1.24.0
+        with:
+          payload: |
+            {"text": "Weekly Alert Probe completed for ${{ github.repository }}@${{ github.sha }}"}
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}

@@ -1,0 +1,81 @@
+name: PROD Canary Daily
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+jobs:
+  canary:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run preflight on remote
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.PROD_SSH_HOST }}
+          username: ${{ secrets.PROD_SSH_USER }}
+          key: ${{ secrets.PROD_SSH_KEY }}
+          script: |
+            bash /opt/digital-lab/scripts/prod_preflight.sh /opt/digital-lab/digital-lab/backend/config/pins.json
+      - name: Run canary on remote
+        uses: appleboy/ssh-action@v1.0.3
+        env:
+          BACKEND_URL: http://127.0.0.1:8000
+        with:
+          host: ${{ secrets.PROD_SSH_HOST }}
+          username: ${{ secrets.PROD_SSH_USER }}
+          key: ${{ secrets.PROD_SSH_KEY }}
+          script: |
+            export BACKEND_URL
+            bash /opt/digital-lab/scripts/prod_canary.sh
+      - name: Copy canary report
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.PROD_SSH_HOST }}
+          username: ${{ secrets.PROD_SSH_USER }}
+          key: ${{ secrets.PROD_SSH_KEY }}
+          source: /opt/digital-lab/runs/prod_canary_report.json
+          target: runs/
+      - name: Slack notify
+        if: ${{ env.SLACK_WEBHOOK != '' }}
+        uses: slackapi/slack-github-action@v1.24.0
+        with:
+          payload: |
+            {"text": "Daily Canary completed for ${{ github.repository }}@${{ github.sha }}"}
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
+
+  synth:
+    runs-on: ubuntu-latest
+    needs: canary
+    steps:
+      - name: Run synthetic load on remote
+        uses: appleboy/ssh-action@v1.0.3
+        env:
+          BACKEND_URL: http://127.0.0.1:8000
+        with:
+          host: ${{ secrets.PROD_SSH_HOST }}
+          username: ${{ secrets.PROD_SSH_USER }}
+          key: ${{ secrets.PROD_SSH_KEY }}
+          script: |
+            export BACKEND_URL
+            bash /opt/digital-lab/scripts/prod_synthetic_load.sh
+      - name: Copy synthetic reports
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.PROD_SSH_HOST }}
+          username: ${{ secrets.PROD_SSH_USER }}
+          key: ${{ secrets.PROD_SSH_KEY }}
+          source: /opt/digital-lab/runs/synth_*.json
+          target: runs/
+      - name: Evaluate synthetic load
+        run: |
+          warn=0
+          for f in runs/synth_*.json; do
+            echo "Checking $f"; over=$(jq -r '.overhead_ratio' "$f"); if (( $(echo "$over > 0.15" | bc -l) )); then echo "WARN: overhead $over > 0.15"; warn=1; fi; done
+          echo "warn=$warn" > synth_status.txt
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: prod-synth-artifacts
+          path: runs/synth_*.json

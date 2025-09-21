@@ -1,0 +1,32 @@
+name: PROD Rollback Drill
+
+on:
+  schedule:
+    - cron: '0 7 1 * *'
+  workflow_dispatch:
+
+jobs:
+  rollback_drill:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Perform rollback drill on remote
+        uses: appleboy/ssh-action@v1.0.3
+        env:
+          BACKEND_URL: http://127.0.0.1:8000
+          PIN: ${{ github.event.inputs.pin_version || '1.0.0' }}
+        with:
+          host: ${{ secrets.PROD_SSH_HOST }}
+          username: ${{ secrets.PROD_SSH_USER }}
+          key: ${{ secrets.PROD_SSH_KEY }}
+          script: |
+            set -euo pipefail
+            export BACKEND_URL
+            # Use current pins to simulate rollback to same stable version
+            CURR=$(curl -fsS $BACKEND_URL/api/pins | jq -r '.pins.altruism_update')
+            bash /opt/digital-lab/scripts/prod_rollback.sh altruism_update@${CURR}
+            # Health check and canary
+            curl -fsS $BACKEND_URL/api/registry/health | jq '.'
+            bash /opt/digital-lab/scripts/prod_canary.sh
+            # Mark drill completion
+            curl -fsS -X POST $BACKEND_URL/api/audit/mark -H 'Content-Type: application/json' -H 'X-User-Role: operator' -d '{"action":"rollback_drill_completed"}'
+

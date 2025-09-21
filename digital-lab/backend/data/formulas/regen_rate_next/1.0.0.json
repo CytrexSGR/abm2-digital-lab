@@ -1,0 +1,117 @@
+{
+  "version": "1.0.0",
+  "inputs": [
+    {
+      "name": "base_regen"
+    },
+    {
+      "name": "mean_altruism"
+    },
+    {
+      "name": "resilience_bonus_factor"
+    }
+  ],
+  "expression": "Max(0.0, base_regen * (1 + (mean_altruism - 0.5) * resilience_bonus_factor))",
+  "allowed_symbols": [
+    "Min",
+    "Max",
+    "+",
+    "-",
+    "*",
+    "/"
+  ],
+  "tests": {
+    "defaults": {},
+    "golden": [
+      {
+        "name": "neutral_altruism_no_change",
+        "input": {
+          "base_regen": 15.0,
+          "mean_altruism": 0.5,
+          "resilience_bonus_factor": 0.5
+        },
+        "expected": 15.0,
+        "tolerance": 1e-12
+      },
+      {
+        "name": "high_altruism_increases_regen",
+        "input": {
+          "base_regen": 15.0,
+          "mean_altruism": 0.8,
+          "resilience_bonus_factor": 0.5
+        },
+        "expected": 17.25,
+        "tolerance": 1e-12
+      },
+      {
+        "name": "low_altruism_decreases_regen",
+        "input": {
+          "base_regen": 15.0,
+          "mean_altruism": 0.2,
+          "resilience_bonus_factor": 0.5
+        },
+        "expected": 12.75,
+        "tolerance": 1e-12
+      },
+      {
+        "name": "zero_altruism_max_decrease",
+        "input": {
+          "base_regen": 15.0,
+          "mean_altruism": 0.0,
+          "resilience_bonus_factor": 0.5
+        },
+        "expected": 11.25,
+        "tolerance": 1e-12
+      },
+      {
+        "name": "max_altruism_max_increase",
+        "input": {
+          "base_regen": 15.0,
+          "mean_altruism": 1.0,
+          "resilience_bonus_factor": 0.5
+        },
+        "expected": 18.75,
+        "tolerance": 1e-12
+      },
+      {
+        "name": "clamped_to_zero_minimum",
+        "input": {
+          "base_regen": 5.0,
+          "mean_altruism": 0.0,
+          "resilience_bonus_factor": 2.0
+        },
+        "expected": 0.0,
+        "tolerance": 1e-12
+      }
+    ],
+    "properties": [
+      {
+        "name": "monotonic_increasing_in_altruism",
+        "type": "monotonic",
+        "direction": "increasing",
+        "cases": [
+          {
+            "input": {
+              "base_regen": 15.0,
+              "mean_altruism": 0.3,
+              "resilience_bonus_factor": 0.5
+            }
+          },
+          {
+            "input": {
+              "base_regen": 15.0,
+              "mean_altruism": 0.7,
+              "resilience_bonus_factor": 0.5
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "metadata": {
+    "description": "Calculates next regeneration rate based on base rate modified by mean altruism and resilience bonus factor",
+    "created_by": "migration_tool",
+    "released_by": "migration_tool"
+  },
+  "status": "released"
+}

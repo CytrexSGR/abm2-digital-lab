@@ -1,0 +1,1221 @@
+{
+  "series": [
+    {
+      "Mean_Altruism": 0.54,
+      "Mean_Consumption": 25523.830733585815,
+      "Mean_Investment": 942.7174410964382,
+      "Mean_Gain": 563.5682862284684
+    },
+    {
+      "Mean_Altruism": 0.54,
+      "Mean_Consumption": 26484.344893729605,
+      "Mean_Investment": 1132.202211824089,
+      "Mean_Gain": 687.0732699979014
+    },
+    {
+      "Mean_Altruism": 0.5066666666666667,
+      "Mean_Consumption": 26263.512154235857,
+      "Mean_Investment": 1117.3312662093974,
+      "Mean_Gain": 840.0611470846187
+    },
+    {
+      "Mean_Altruism": 0.5066666666666667,
+      "Mean_Consumption": 25499.502943700794,
+      "Mean_Investment": 1099.2291048478883,
+      "Mean_Gain": 835.2265817846984
+    },
+    {
+      "Mean_Altruism": 0.58,
+      "Mean_Consumption": 23570.91604266482,
+      "Mean_Investment": 1064.612809175698,
+      "Mean_Gain": 399.6821071917698
+    },
+    {
+      "Mean_Altruism": 0.6,
+      "Mean_Consumption": 25279.753859331988,
+      "Mean_Investment": 1125.6446131995199,
+      "Mean_Gain": 583.103766706679
+    },
+    {
+      "Mean_Altruism": 0.5666666666666667,
+      "Mean_Consumption": 26284.09950851405,
+      "Mean_Investment": 1132.5131798293858,
+      "Mean_Gain": 614.4398457259055
+    },
+    {
+      "Mean_Altruism": 0.42,
+      "Mean_Consumption": 26007.137270958745,
+      "Mean_Investment": 1177.3706807473732,
+      "Mean_Gain": 1404.8486559166497
+    },
+    {
+      "Mean_Altruism": 0.4533333333333333,
+      "Mean_Consumption": 25886.98418405382,
+      "Mean_Investment": 1131.7389170072934,
+      "Mean_Gain": 1303.2110466731494
+    },
+    {
+      "Mean_Altruism": 0.4866666666666667,
+      "Mean_Consumption": 26258.054363502462,
+      "Mean_Investment": 1224.8209482908753,
+      "Mean_Gain": 977.8683294791156
+    },
+    {
+      "Mean_Altruism": 0.5733333333333334,
+      "Mean_Consumption": 24635.093083261334,
+      "Mean_Investment": 1179.1773135692295,
+      "Mean_Gain": 564.9753224306666
+    },
+    {
+      "Mean_Altruism": 0.49333333333333335,
+      "Mean_Consumption": 28019.398199932508,
+      "Mean_Investment": 1301.415652781731,
+      "Mean_Gain": 1068.3444740230943
+    },
+    {
+      "Mean_Altruism": 0.46384315736841947,
+      "Mean_Consumption": 25401.2748191244,
+      "Mean_Investment": 1165.242787933725,
+      "Mean_Gain": 948.432644860266
+    },
+    {
+      "Mean_Altruism": 0.6,
+      "Mean_Consumption": 25932.108923562722,
+      "Mean_Investment": 1179.0549008179394,
+      "Mean_Gain": 662.2617916791148
+    },
+    {
+      "Mean_Altruism": 0.46,
+      "Mean_Consumption": 24202.631379903516,
+      "Mean_Investment": 1170.682653974704,
+      "Mean_Gain": 673.9940437678035
+    },
+    {
+      "Mean_Altruism": 0.5333333333333333,
+      "Mean_Consumption": 24674.1227961399,
+      "Mean_Investment": 1161.8259314214943,
+      "Mean_Gain": 645.0967357982558
+    },
+    {
+      "Mean_Altruism": 0.49883948127133787,
+      "Mean_Consumption": 25628.711452812222,
+      "Mean_Investment": 1232.8362710128536,
+      "Mean_Gain": 760.0295811172055
+    },
+    {
+      "Mean_Altruism": 0.47333333333333333,
+      "Mean_Consumption": 23993.906279307546,
+      "Mean_Investment": 1020.5005518166732,
+      "Mean_Gain": 1016.435642715403
+    },
+    {
+      "Mean_Altruism": 0.54,
+      "Mean_Consumption": 26663.487534527932,
+      "Mean_Investment": 1151.3210134180747,
+      "Mean_Gain": 823.7111419639814
+    },
+    {
+      "Mean_Altruism": 0.54,
+      "Mean_Consumption": 25881.547871753413,
+      "Mean_Investment": 1227.3937711176163,
+      "Mean_Gain": 893.5740157926471
+    },
+    {
+      "Mean_Altruism": 0.54,
+      "Mean_Consumption": 25393.15777289564,
+      "Mean_Investment": 1145.4800821286885,
+      "Mean_Gain": 610.8487382634031
+    },
+    {
+      "Mean_Altruism": 0.5733333333333334,
+      "Mean_Consumption": 26724.492637506726,
+      "Mean_Investment": 1279.202383478667,
+      "Mean_Gain": 399.5981366195836
+    },
+    {
+      "Mean_Altruism": 0.4,
+      "Mean_Consumption": 24036.730664259612,
+      "Mean_Investment": 1150.0390125522483,
+      "Mean_Gain": 1047.3327263345113
+    },
+    {
+      "Mean_Altruism": 0.54,
+      "Mean_Consumption": 28340.833369467928,
+      "Mean_Investment": 1230.6356142198413,
+      "Mean_Gain": 687.6486046589393
+    },
+    {
+      "Mean_Altruism": 0.54,
+      "Mean_Consumption": 23014.183525925346,
+      "Mean_Investment": 1094.6573166839876,
+      "Mean_Gain": 550.2206865248115
+    },
+    {
+      "Mean_Altruism": 0.5933333333333334,
+      "Mean_Consumption": 26123.596457592877,
+      "Mean_Investment": 1213.550384726209,
+      "Mean_Gain": 459.94290473328914
+    },
+    {
+      "Mean_Altruism": 0.5,
+      "Mean_Consumption": 23737.078239266815,
+      "Mean_Investment": 1117.7042971918918,
+      "Mean_Gain": 832.1997448494344
+    },
+    {
+      "Mean_Altruism": 0.4866666666666667,
+      "Mean_Consumption": 24972.59028434583,
+      "Mean_Investment": 1169.8472538772885,
+      "Mean_Gain": 1196.3297725428215
+    },
+    {
+      "Mean_Altruism": 0.56,
+      "Mean_Consumption": 25470.025830329883,
+      "Mean_Investment": 1210.1507849468749,
+      "Mean_Gain": 566.194377319424
+    },
+    {
+      "Mean_Altruism": 0.46,
+      "Mean_Consumption": 25630.641231383936,
+      "Mean_Investment": 1150.241986639399,
+      "Mean_Gain": 1030.0646377222788
+    },
+    {
+      "Mean_Altruism": 0.52,
+      "Mean_Consumption": 26262.11921246822,
+      "Mean_Investment": 1146.8939036467682,
+      "Mean_Gain": 743.5661110257221
+    },
+    {
+      "Mean_Altruism": 0.47333333333333333,
+      "Mean_Consumption": 25782.205050355245,
+      "Mean_Investment": 1185.2531495687458,
+      "Mean_Gain": 872.0517077433262
+    },
+    {
+      "Mean_Altruism": 0.43333333333333335,
+      "Mean_Consumption": 26636.915302233225,
+      "Mean_Investment": 1238.6853372656622,
+      "Mean_Gain": 1193.0206831827309
+    },
+    {
+      "Mean_Altruism": 0.52,
+      "Mean_Consumption": 26390.25315978416,
+      "Mean_Investment": 1203.6290196032055,
+      "Mean_Gain": 985.5270818748766
+    },
+    {
+      "Mean_Altruism": 0.5133333333333333,
+      "Mean_Consumption": 26285.588089015477,
+      "Mean_Investment": 1228.655252178166,
+      "Mean_Gain": 1175.3657855582933
+    },
+    {
+      "Mean_Altruism": 0.47333333333333333,
+      "Mean_Consumption": 25372.14408529773,
+      "Mean_Investment": 1151.0925275767713,
+      "Mean_Gain": 1062.0248683330697
+    },
+    {
+      "Mean_Altruism": 0.5733333333333334,
+      "Mean_Consumption": 27295.470806826987,
+      "Mean_Investment": 1287.8337760943562,
+      "Mean_Gain": 407.93356805759436
+    },
+    {
+      "Mean_Altruism": 0.5133333333333333,
+      "Mean_Consumption": 26578.559292594295,
+      "Mean_Investment": 1348.9783424573116,
+      "Mean_Gain": 976.2316348540488
+    },
+    {
+      "Mean_Altruism": 0.44,
+      "Mean_Consumption": 22342.093641147676,
+      "Mean_Investment": 1084.5267905563078,
+      "Mean_Gain": 1136.7031531088614
+    },
+    {
+      "Mean_Altruism": 0.5466666666666666,
+      "Mean_Consumption": 24058.114453624494,
+      "Mean_Investment": 1161.2593769580878,
+      "Mean_Gain": 764.5639323278143
+    },
+    {
+      "Mean_Altruism": 0.5133333333333333,
+      "Mean_Consumption": 24811.389015747827,
+      "Mean_Investment": 1136.1401251122243,
+      "Mean_Gain": 1180.9933392368641
+    },
+    {
+      "Mean_Altruism": 0.5066666666666667,
+      "Mean_Consumption": 27479.03315397604,
+      "Mean_Investment": 1292.1881029364079,
+      "Mean_Gain": 719.5231911855394
+    },
+    {
+      "Mean_Altruism": 0.4533333333333333,
+      "Mean_Consumption": 23956.16350794267,
+      "Mean_Investment": 1112.09410468486,
+      "Mean_Gain": 772.140913825696
+    },
+    {
+      "Mean_Altruism": 0.5,
+      "Mean_Consumption": 26287.043658534163,
+      "Mean_Investment": 1196.5409296792277,
+      "Mean_Gain": 787.8343636418892
+    },
+    {
+      "Mean_Altruism": 0.4866666666666667,
+      "Mean_Consumption": 25711.946204649506,
+      "Mean_Investment": 1210.8449463819875,
+      "Mean_Gain": 855.0105525364038
+    },
+    {
+      "Mean_Altruism": 0.46,
+      "Mean_Consumption": 25895.89198013178,
+      "Mean_Investment": 1231.8550286486884,
+      "Mean_Gain": 801.5456404750099
+    },
+    {
+      "Mean_Altruism": 0.42,
+      "Mean_Consumption": 25894.36884033534,
+      "Mean_Investment": 1138.0859143379564,
+      "Mean_Gain": 1195.7747481953643
+    },
+    {
+      "Mean_Altruism": 0.54,
+      "Mean_Consumption": 25170.97383053354,
+      "Mean_Investment": 1196.2850723669355,
+      "Mean_Gain": 640.1216165097991
+    },
+    {
+      "Mean_Altruism": 0.4066666666666667,
+      "Mean_Consumption": 29126.78774552852,
+      "Mean_Investment": 1294.3012356149154,
+      "Mean_Gain": 1293.7234389728117
+    },
+    {
+      "Mean_Altruism": 0.5177793564874699,
+      "Mean_Consumption": 26352.25144895835,
+      "Mean_Investment": 1236.1125098034943,
+      "Mean_Gain": 1166.499508234498
+    },
+    {
+      "Mean_Altruism": 0.4533333333333333,
+      "Mean_Consumption": 26352.776728582437,
+      "Mean_Investment": 1312.5344899775732,
+      "Mean_Gain": 1267.943326486471
+    },
+    {
+      "Mean_Altruism": 0.44666666666666666,
+      "Mean_Consumption": 23442.709401559016,
+      "Mean_Investment": 1080.0495897540345,
+      "Mean_Gain": 941.6497081711217
+    },
+    {
+      "Mean_Altruism": 0.5,
+      "Mean_Consumption": 26054.302163531167,
+      "Mean_Investment": 1220.729595113036,
+      "Mean_Gain": 697.7462270492377
+    },
+    {
+      "Mean_Altruism": 0.44666666666666666,
+      "Mean_Consumption": 26866.27987100888,
+      "Mean_Investment": 1217.3440240902798,
+      "Mean_Gain": 1123.3011340036019
+    },
+    {
+      "Mean_Altruism": 0.5,
+      "Mean_Consumption": 26500.35138305413,
+      "Mean_Investment": 1258.146109881613,
+      "Mean_Gain": 1167.0806911662744
+    },
+    {
+      "Mean_Altruism": 0.5,
+      "Mean_Consumption": 25573.178452420438,
+      "Mean_Investment": 1149.408924797686,
+      "Mean_Gain": 750.1751155635571
+    },
+    {
+      "Mean_Altruism": 0.4866666666666667,
+      "Mean_Consumption": 26268.835876451732,
+      "Mean_Investment": 1160.9263501072555,
+      "Mean_Gain": 832.625505430563
+    },
+    {
+      "Mean_Altruism": 0.5133333333333333,
+      "Mean_Consumption": 24239.92690911096,
+      "Mean_Investment": 1160.4492203613395,
+      "Mean_Gain": 1117.4719337624886
+    },
+    {
+      "Mean_Altruism": 0.44666666666666666,
+      "Mean_Consumption": 25088.908793608105,
+      "Mean_Investment": 1197.7047776692882,
+      "Mean_Gain": 1013.9628590266911
+    },
+    {
+      "Mean_Altruism": 0.5133333333333333,
+      "Mean_Consumption": 24873.029198884706,
+      "Mean_Investment": 1165.7505513338097,
+      "Mean_Gain": 783.0314655424472
+    },
+    {
+      "Mean_Altruism": 0.52,
+      "Mean_Consumption": 24725.947190231287,
+      "Mean_Investment": 1147.0432278519022,
+      "Mean_Gain": 737.1887827156493
+    },
+    {
+      "Mean_Altruism": 0.47333333333333333,
+      "Mean_Consumption": 26716.837264197202,
+      "Mean_Investment": 1244.1818469537566,
+      "Mean_Gain": 830.399734669791
+    },
+    {
+      "Mean_Altruism": 0.5533333333333333,
+      "Mean_Consumption": 25150.837112679637,
+      "Mean_Investment": 1182.5103476362287,
+      "Mean_Gain": 673.6155489381924
+    },
+    {
+      "Mean_Altruism": 0.4666666666666667,
+      "Mean_Consumption": 24338.887383434023,
+      "Mean_Investment": 1188.6148489261027,
+      "Mean_Gain": 594.4542294127195
+    },
+    {
+      "Mean_Altruism": 0.49333333333333335,
+      "Mean_Consumption": 24616.256371128875,
+      "Mean_Investment": 1149.1801007479294,
+      "Mean_Gain": 871.39633671052
+    },
+    {
+      "Mean_Altruism": 0.5066666666666667,
+      "Mean_Consumption": 25947.319815847255,
+      "Mean_Investment": 1251.9256274727088,
+      "Mean_Gain": 888.5525813508531
+    },
+    {
+      "Mean_Altruism": 0.48,
+      "Mean_Consumption": 25861.446165958736,
+      "Mean_Investment": 1187.5848683035033,
+      "Mean_Gain": 967.7377271199075
+    },
+    {
+      "Mean_Altruism": 0.5466666666666666,
+      "Mean_Consumption": 28406.10722697551,
+      "Mean_Investment": 1304.684714930678,
+      "Mean_Gain": 557.5441904082674
+    },
+    {
+      "Mean_Altruism": 0.5133333333333333,
+      "Mean_Consumption": 24045.354717440936,
+      "Mean_Investment": 1135.5526127795165,
+      "Mean_Gain": 807.6052534682065
+    },
+    {
+      "Mean_Altruism": 0.4866666666666667,
+      "Mean_Consumption": 24831.334133837943,
+      "Mean_Investment": 1186.9147999897177,
+      "Mean_Gain": 743.3080680449456
+    },
+    {
+      "Mean_Altruism": 0.44666666666666666,
+      "Mean_Consumption": 24656.07154641282,
+      "Mean_Investment": 1134.1924283851893,
+      "Mean_Gain": 1070.7404160148708
+    },
+    {
+      "Mean_Altruism": 0.4533333333333333,
+      "Mean_Consumption": 26381.14569213042,
+      "Mean_Investment": 1214.8791676271098,
+      "Mean_Gain": 948.74624059765
+    },
+    {
+      "Mean_Altruism": 0.5050764912289537,
+      "Mean_Consumption": 24526.351961215052,
+      "Mean_Investment": 1161.245864904985,
+      "Mean_Gain": 918.7705571671944
+    },
+    {
+      "Mean_Altruism": 0.5133333333333333,
+      "Mean_Consumption": 28209.6400566471,
+      "Mean_Investment": 1292.3861082869903,
+      "Mean_Gain": 1030.137311555822
+    },
+    {
+      "Mean_Altruism": 0.4666666666666667,
+      "Mean_Consumption": 24720.212373230705,
+      "Mean_Investment": 1135.7619422268224,
+      "Mean_Gain": 652.5249200933122
+    },
+    {
+      "Mean_Altruism": 0.5066666666666667,
+      "Mean_Consumption": 25920.311797320403,
+      "Mean_Investment": 1229.0779286932382,
+      "Mean_Gain": 1016.7563523241051
+    },
+    {
+      "Mean_Altruism": 0.4533333333333333,
+      "Mean_Consumption": 24653.50440791743,
+      "Mean_Investment": 1166.4286233175817,
+      "Mean_Gain": 1116.8679656666548
+    },
+    {
+      "Mean_Altruism": 0.5266666666666666,
+      "Mean_Consumption": 25793.353932828748,
+      "Mean_Investment": 1239.2172553775542,
+      "Mean_Gain": 614.8537114803399
+    },
+    {
+      "Mean_Altruism": 0.49333333333333335,
+      "Mean_Consumption": 27508.402885561543,
+      "Mean_Investment": 1279.0191125347794,
+      "Mean_Gain": 900.8617682389639
+    },
+    {
+      "Mean_Altruism": 0.5333333333333333,
+      "Mean_Consumption": 23744.44921324635,
+      "Mean_Investment": 1106.6158834106673,
+      "Mean_Gain": 806.8617825277709
+    },
+    {
+      "Mean_Altruism": 0.49333333333333335,
+      "Mean_Consumption": 24837.675126435995,
+      "Mean_Investment": 1143.091626851402,
+      "Mean_Gain": 955.9605065111599
+    },
+    {
+      "Mean_Altruism": 0.49333333333333335,
+      "Mean_Consumption": 25437.414574498,
+      "Mean_Investment": 1174.821753453,
+      "Mean_Gain": 1183.7037779314817
+    },
+    {
+      "Mean_Altruism": 0.5118196847894132,
+      "Mean_Consumption": 23566.508068996533,
+      "Mean_Investment": 1125.0325913701163,
+      "Mean_Gain": 911.1969890695209
+    },
+    {
+      "Mean_Altruism": 0.4,
+      "Mean_Consumption": 25386.905732051375,
+      "Mean_Investment": 1168.6134885773893,
+      "Mean_Gain": 1142.8024202943318
+    },
+    {
+      "Mean_Altruism": 0.4666666666666667,
+      "Mean_Consumption": 25769.756601929002,
+      "Mean_Investment": 1185.246462822194,
+      "Mean_Gain": 1327.7518278154585
+    },
+    {
+      "Mean_Altruism": 0.46,
+      "Mean_Consumption": 26983.8706013745,
+      "Mean_Investment": 1233.5365390836198,
+      "Mean_Gain": 1046.4436494638787
+    },
+    {
+      "Mean_Altruism": 0.4666666666666667,
+      "Mean_Consumption": 23770.75215022519,
+      "Mean_Investment": 1114.5939143964645,
+      "Mean_Gain": 827.3150057874772
+    },
+    {
+      "Mean_Altruism": 0.44666666666666666,
+      "Mean_Consumption": 26245.37759874227,
+      "Mean_Investment": 1273.8588255554876,
+      "Mean_Gain": 1359.4618225015606
+    },
+    {
+      "Mean_Altruism": 0.5066666666666667,
+      "Mean_Consumption": 25989.06151761392,
+      "Mean_Investment": 1216.4026978938502,
+      "Mean_Gain": 752.9809851679744
+    },
+    {
+      "Mean_Altruism": 0.48,
+      "Mean_Consumption": 25957.594517022866,
+      "Mean_Investment": 1267.3212277747457,
+      "Mean_Gain": 876.588969168475
+    },
+    {
+      "Mean_Altruism": 0.5133333333333333,
+      "Mean_Consumption": 23908.921050261742,
+      "Mean_Investment": 1039.2440285710293,
+      "Mean_Gain": 835.8415263598355
+    },
+    {
+      "Mean_Altruism": 0.5533333333333333,
+      "Mean_Consumption": 26848.403029459143,
+      "Mean_Investment": 1267.9142171446108,
+      "Mean_Gain": 568.6831651877739
+    },
+    {
+      "Mean_Altruism": 0.5066666666666667,
+      "Mean_Consumption": 26111.803135902723,
+      "Mean_Investment": 1175.7588120164792,
+      "Mean_Gain": 954.6328371950955
+    },
+    {
+      "Mean_Altruism": 0.5933333333333334,
+      "Mean_Consumption": 26841.17649071488,
+      "Mean_Investment": 1326.7016731747997,
+      "Mean_Gain": 376.80061116116644
+    },
+    {
+      "Mean_Altruism": 0.4533333333333333,
+      "Mean_Consumption": 25754.310136613367,
+      "Mean_Investment": 1308.770478511596,
+      "Mean_Gain": 1400.8454080581657
+    },
+    {
+      "Mean_Altruism": 0.56,
+      "Mean_Consumption": 25058.76891605087,
+      "Mean_Investment": 1142.666064078004,
+      "Mean_Gain": 390.40246949355844
+    },
+    {
+      "Mean_Altruism": 0.47333333333333333,
+      "Mean_Consumption": 27238.552328761103,
+      "Mean_Investment": 1245.2792677993923,
+      "Mean_Gain": 977.4103659389654
+    },
+    {
+      "Mean_Altruism": 0.4533333333333333,
+      "Mean_Consumption": 27096.327792158514,
+      "Mean_Investment": 1275.9341463158614,
+      "Mean_Gain": 1171.7379200765918
+    },
+    {
+      "Mean_Altruism": 0.5266666666666666,
+      "Mean_Consumption": 26758.901108691556,
+      "Mean_Investment": 1251.6378672314568,
+      "Mean_Gain": 957.7260185862954
+    },
+    {
+      "Mean_Altruism": 0.4866666666666667,
+      "Mean_Consumption": 25408.309154139533,
+      "Mean_Investment": 1232.0946697506874,
+      "Mean_Gain": 645.4198588304679
+    },
+    {
+      "Mean_Altruism": 0.5066666666666667,
+      "Mean_Consumption": 24996.52376693501,
+      "Mean_Investment": 1236.2927038330201,
+      "Mean_Gain": 870.9914940315982
+    },
+    {
+      "Mean_Altruism": 0.5666666666666667,
+      "Mean_Consumption": 25227.43200590636,
+      "Mean_Investment": 1255.724679284131,
+      "Mean_Gain": 821.863175571867
+    },
+    {
+      "Mean_Altruism": 0.5059527307188167,
+      "Mean_Consumption": 26483.428487378613,
+      "Mean_Investment": 1192.779536747555,
+      "Mean_Gain": 924.2259194486201
+    },
+    {
+      "Mean_Altruism": 0.49333333333333335,
+      "Mean_Consumption": 24505.595619029868,
+      "Mean_Investment": 1111.0410952885873,
+      "Mean_Gain": 694.910209568182
+    },
+    {
+      "Mean_Altruism": 0.5133333333333333,
+      "Mean_Consumption": 23787.751718992316,
+      "Mean_Investment": 1138.1315524712645,
+      "Mean_Gain": 795.7861631112598
+    },
+    {
+      "Mean_Altruism": 0.5066666666666667,
+      "Mean_Consumption": 27195.46335983725,
+      "Mean_Investment": 1294.467019030293,
+      "Mean_Gain": 792.8026977575033
+    },
+    {
+      "Mean_Altruism": 0.5133333333333333,
+      "Mean_Consumption": 26562.490815340938,
+      "Mean_Investment": 1289.5601120759543,
+      "Mean_Gain": 635.9674257127143
+    },
+    {
+      "Mean_Altruism": 0.44666666666666666,
+      "Mean_Consumption": 25386.0366548736,
+      "Mean_Investment": 1193.9867966163974,
+      "Mean_Gain": 971.9726526484144
+    },
+    {
+      "Mean_Altruism": 0.49333333333333335,
+      "Mean_Consumption": 23239.012873134317,
+      "Mean_Investment": 1053.7957883365418,
+      "Mean_Gain": 716.4649293702645
+    },
+    {
+      "Mean_Altruism": 0.4533333333333333,
+      "Mean_Consumption": 24119.67613137615,
+      "Mean_Investment": 1045.9318014401574,
+      "Mean_Gain": 1114.677250793148
+    },
+    {
+      "Mean_Altruism": 0.44,
+      "Mean_Consumption": 25517.53592594414,
+      "Mean_Investment": 1189.7989781114968,
+      "Mean_Gain": 1121.073544543884
+    },
+    {
+      "Mean_Altruism": 0.5333333333333333,
+      "Mean_Consumption": 26072.580142238985,
+      "Mean_Investment": 1169.4405822689191,
+      "Mean_Gain": 823.601016661013
+    },
+    {
+      "Mean_Altruism": 0.5066666666666667,
+      "Mean_Consumption": 24958.423507349664,
+      "Mean_Investment": 1122.3377348726158,
+      "Mean_Gain": 871.6221604427095
+    },
+    {
+      "Mean_Altruism": 0.4930234096297808,
+      "Mean_Consumption": 26741.67008620835,
+      "Mean_Investment": 1243.9888819520556,
+      "Mean_Gain": 703.0161515120891
+    },
+    {
+      "Mean_Altruism": 0.5666666666666667,
+      "Mean_Consumption": 26441.01013247364,
+      "Mean_Investment": 1245.9509659989624,
+      "Mean_Gain": 823.231886214788
+    },
+    {
+      "Mean_Altruism": 0.5066666666666667,
+      "Mean_Consumption": 24459.56137242013,
+      "Mean_Investment": 1114.337196975573,
+      "Mean_Gain": 837.5173849985118
+    },
+    {
+      "Mean_Altruism": 0.48,
+      "Mean_Consumption": 26729.91252261328,
+      "Mean_Investment": 1194.9867249573406,
+      "Mean_Gain": 1021.143900530211
+    },
+    {
+      "Mean_Altruism": 0.54,
+      "Mean_Consumption": 27453.39932993706,
+      "Mean_Investment": 1350.353926249073,
+      "Mean_Gain": 615.0288930797622
+    },
+    {
+      "Mean_Altruism": 0.5133333333333333,
+      "Mean_Consumption": 24993.701727974894,
+      "Mean_Investment": 1199.1802379123137,
+      "Mean_Gain": 726.1550031173208
+    },
+    {
+      "Mean_Altruism": 0.56,
+      "Mean_Consumption": 25094.13564488795,
+      "Mean_Investment": 1235.497212032716,
+      "Mean_Gain": 819.0239447152161
+    },
+    {
+      "Mean_Altruism": 0.41333333333333333,
+      "Mean_Consumption": 25757.94563990557,
+      "Mean_Investment": 1192.8037378870347,
+      "Mean_Gain": 1096.7525325582499
+    },
+    {
+      "Mean_Altruism": 0.48,
+      "Mean_Consumption": 25474.27491786899,
+      "Mean_Investment": 1174.1290661700884,
+      "Mean_Gain": 1161.108081588671
+    },
+    {
+      "Mean_Altruism": 0.4666666666666667,
+      "Mean_Consumption": 26491.11047843794,
+      "Mean_Investment": 1260.1563708540634,
+      "Mean_Gain": 1170.2408418498305
+    },
+    {
+      "Mean_Altruism": 0.5066666666666667,
+      "Mean_Consumption": 25814.342038382532,
+      "Mean_Investment": 1197.7195953293897,
+      "Mean_Gain": 1019.9870850569513
+    },
+    {
+      "Mean_Altruism": 0.49333333333333335,
+      "Mean_Consumption": 24685.341556897172,
+      "Mean_Investment": 1144.1235499190097,
+      "Mean_Gain": 881.1448234421317
+    },
+    {
+      "Mean_Altruism": 0.5133333333333333,
+      "Mean_Consumption": 25074.562834942935,
+      "Mean_Investment": 1224.7797476374249,
+      "Mean_Gain": 843.3182311714002
+    },
+    {
+      "Mean_Altruism": 0.44,
+      "Mean_Consumption": 25902.96672055596,
+      "Mean_Investment": 1252.2632114845744,
+      "Mean_Gain": 1373.4526686765573
+    },
+    {
+      "Mean_Altruism": 0.46,
+      "Mean_Consumption": 25487.0447129052,
+      "Mean_Investment": 1187.4946152820353,
+      "Mean_Gain": 1206.384947185006
+    },
+    {
+      "Mean_Altruism": 0.5,
+      "Mean_Consumption": 23183.59078403158,
+      "Mean_Investment": 1130.6230868551347,
+      "Mean_Gain": 1104.8635217661126
+    },
+    {
+      "Mean_Altruism": 0.4,
+      "Mean_Consumption": 24543.34700534625,
+      "Mean_Investment": 1198.7443229680862,
+      "Mean_Gain": 1346.4937584792438
+    },
+    {
+      "Mean_Altruism": 0.5333333333333333,
+      "Mean_Consumption": 27377.15323350308,
+      "Mean_Investment": 1358.2685172845795,
+      "Mean_Gain": 953.8789108417393
+    },
+    {
+      "Mean_Altruism": 0.5066666666666667,
+      "Mean_Consumption": 25711.975005621855,
+      "Mean_Investment": 1234.5764680439677,
+      "Mean_Gain": 688.3410781371306
+    },
+    {
+      "Mean_Altruism": 0.42,
+      "Mean_Consumption": 25327.628683277675,
+      "Mean_Investment": 1203.8690146823492,
+      "Mean_Gain": 863.8629782236084
+    },
+    {
+      "Mean_Altruism": 0.5266666666666666,
+      "Mean_Consumption": 24290.99071324095,
+      "Mean_Investment": 1126.9150705099203,
+      "Mean_Gain": 925.239338391185
+    },
+    {
+      "Mean_Altruism": 0.5466666666666666,
+      "Mean_Consumption": 25967.250755861878,
+      "Mean_Investment": 1216.887992731944,
+      "Mean_Gain": 886.5348617096079
+    },
+    {
+      "Mean_Altruism": 0.5133333333333333,
+      "Mean_Consumption": 25851.349292269966,
+      "Mean_Investment": 1246.3136454057128,
+      "Mean_Gain": 920.1933215110297
+    },
+    {
+      "Mean_Altruism": 0.5533333333333333,
+      "Mean_Consumption": 24891.001440763528,
+      "Mean_Investment": 1149.4386435115862,
+      "Mean_Gain": 599.3816025795059
+    },
+    {
+      "Mean_Altruism": 0.4666666666666667,
+      "Mean_Consumption": 25108.475493208556,
+      "Mean_Investment": 1116.247140751206,
+      "Mean_Gain": 951.2257895316741
+    },
+    {
+      "Mean_Altruism": 0.5066666666666667,
+      "Mean_Consumption": 29636.770527712357,
+      "Mean_Investment": 1363.485919600335,
+      "Mean_Gain": 1333.4588800207225
+    },
+    {
+      "Mean_Altruism": 0.5130905813125963,
+      "Mean_Consumption": 23886.15503366032,
+      "Mean_Investment": 1165.7651791372114,
+      "Mean_Gain": 954.6097077202093
+    },
+    {
+      "Mean_Altruism": 0.49333333333333335,
+      "Mean_Consumption": 25636.650213470635,
+      "Mean_Investment": 1284.6419346240802,
+      "Mean_Gain": 1219.7399303276036
+    },
+    {
+      "Mean_Altruism": 0.5266666666666666,
+      "Mean_Consumption": 24307.390488872337,
+      "Mean_Investment": 1102.93476688795,
+      "Mean_Gain": 653.9056085548328
+    },
+    {
+      "Mean_Altruism": 0.5666666666666667,
+      "Mean_Consumption": 25613.58735083895,
+      "Mean_Investment": 1201.4563039722375,
+      "Mean_Gain": 410.0677622576277
+    },
+    {
+      "Mean_Altruism": 0.6,
+      "Mean_Consumption": 26057.832827633207,
+      "Mean_Investment": 1225.845706874557,
+      "Mean_Gain": 464.37857971052347
+    },
+    {
+      "Mean_Altruism": 0.5066666666666667,
+      "Mean_Consumption": 26966.138982078788,
+      "Mean_Investment": 1235.0426130645606,
+      "Mean_Gain": 941.1289802311979
+    },
+    {
+      "Mean_Altruism": 0.48,
+      "Mean_Consumption": 25097.19303014376,
+      "Mean_Investment": 1196.0411813083372,
+      "Mean_Gain": 789.8913663828278
+    },
+    {
+      "Mean_Altruism": 0.5666666666666667,
+      "Mean_Consumption": 25857.457191527916,
+      "Mean_Investment": 1189.2488504824623,
+      "Mean_Gain": 258.43209763047
+    },
+    {
+      "Mean_Altruism": 0.48,
+      "Mean_Consumption": 27156.45903754973,
+      "Mean_Investment": 1257.192350762209,
+      "Mean_Gain": 726.9774702864235
+    },
+    {
+      "Mean_Altruism": 0.4533333333333333,
+      "Mean_Consumption": 27441.81616813951,
+      "Mean_Investment": 1238.6712705613854,
+      "Mean_Gain": 1145.2331412931492
+    },
+    {
+      "Mean_Altruism": 0.54,
+      "Mean_Consumption": 22808.320446357706,
+      "Mean_Investment": 1072.6308294543255,
+      "Mean_Gain": 534.342193248663
+    },
+    {
+      "Mean_Altruism": 0.52,
+      "Mean_Consumption": 25082.362034449856,
+      "Mean_Investment": 1167.0504054372664,
+      "Mean_Gain": 907.6181351240976
+    },
+    {
+      "Mean_Altruism": 0.47069751248618075,
+      "Mean_Consumption": 27632.6417936904,
+      "Mean_Investment": 1235.9022206004613,
+      "Mean_Gain": 1140.5648039270038
+    },
+    {
+      "Mean_Altruism": 0.54,
+      "Mean_Consumption": 27456.423524219408,
+      "Mean_Investment": 1259.754842821322,
+      "Mean_Gain": 652.8987970055271
+    },
+    {
+      "Mean_Altruism": 0.46,
+      "Mean_Consumption": 24501.298041893926,
+      "Mean_Investment": 1124.3562834279815,
+      "Mean_Gain": 861.515303043112
+    },
+    {
+      "Mean_Altruism": 0.47333333333333333,
+      "Mean_Consumption": 27344.25704142931,
+      "Mean_Investment": 1260.0010433698453,
+      "Mean_Gain": 1181.5348158223314
+    },
+    {
+      "Mean_Altruism": 0.47333333333333333,
+      "Mean_Consumption": 26258.66555446749,
+      "Mean_Investment": 1278.6892599748758,
+      "Mean_Gain": 1309.2972560116093
+    },
+    {
+      "Mean_Altruism": 0.5,
+      "Mean_Consumption": 24582.260110453528,
+      "Mean_Investment": 1239.1706818215812,
+      "Mean_Gain": 1105.2133054310666
+    },
+    {
+      "Mean_Altruism": 0.49333333333333335,
+      "Mean_Consumption": 25321.36862468054,
+      "Mean_Investment": 1261.5355976098117,
+      "Mean_Gain": 891.7591185461553
+    },
+    {
+      "Mean_Altruism": 0.5466666666666666,
+      "Mean_Consumption": 27196.254997749125,
+      "Mean_Investment": 1274.7678005850269,
+      "Mean_Gain": 914.5483110659846
+    },
+    {
+      "Mean_Altruism": 0.49333333333333335,
+      "Mean_Consumption": 26418.852557755126,
+      "Mean_Investment": 1276.3135970110789,
+      "Mean_Gain": 576.246767857185
+    },
+    {
+      "Mean_Altruism": 0.5,
+      "Mean_Consumption": 26308.65977930703,
+      "Mean_Investment": 1183.844896738272,
+      "Mean_Gain": 953.7372992848434
+    },
+    {
+      "Mean_Altruism": 0.5266666666666666,
+      "Mean_Consumption": 26424.093368079877,
+      "Mean_Investment": 1246.0838294256744,
+      "Mean_Gain": 735.1453506332397
+    },
+    {
+      "Mean_Altruism": 0.47333333333333333,
+      "Mean_Consumption": 26067.474546366306,
+      "Mean_Investment": 1217.4673817996877,
+      "Mean_Gain": 1131.6287523601072
+    },
+    {
+      "Mean_Altruism": 0.52,
+      "Mean_Consumption": 25445.552733456247,
+      "Mean_Investment": 1190.4589317271646,
+      "Mean_Gain": 730.421640755727
+    },
+    {
+      "Mean_Altruism": 0.4533333333333333,
+      "Mean_Consumption": 25265.911297294922,
+      "Mean_Investment": 1189.0748596412652,
+      "Mean_Gain": 1100.0602055169484
+    },
+    {
+      "Mean_Altruism": 0.4866666666666667,
+      "Mean_Consumption": 25125.63116670223,
+      "Mean_Investment": 1225.556524847265,
+      "Mean_Gain": 1066.8227885051294
+    },
+    {
+      "Mean_Altruism": 0.4866666666666667,
+      "Mean_Consumption": 23988.08310173823,
+      "Mean_Investment": 1117.4776350658806,
+      "Mean_Gain": 815.8519207427676
+    },
+    {
+      "Mean_Altruism": 0.49333333333333335,
+      "Mean_Consumption": 25335.93042288741,
+      "Mean_Investment": 1211.6418533095998,
+      "Mean_Gain": 1029.9957001691755
+    },
+    {
+      "Mean_Altruism": 0.44,
+      "Mean_Consumption": 24480.69412790229,
+      "Mean_Investment": 1126.5790140360339,
+      "Mean_Gain": 1024.18468398621
+    },
+    {
+      "Mean_Altruism": 0.5333333333333333,
+      "Mean_Consumption": 26687.14770902252,
+      "Mean_Investment": 1195.6275507489754,
+      "Mean_Gain": 797.8279126185085
+    },
+    {
+      "Mean_Altruism": 0.5266666666666666,
+      "Mean_Consumption": 25818.194834268856,
+      "Mean_Investment": 1258.9437362656952,
+      "Mean_Gain": 881.5671334980264
+    },
+    {
+      "Mean_Altruism": 0.4666666666666667,
+      "Mean_Consumption": 24501.155699744893,
+      "Mean_Investment": 1135.3448349244443,
+      "Mean_Gain": 655.0449398714915
+    },
+    {
+      "Mean_Altruism": 0.4866666666666667,
+      "Mean_Consumption": 23078.495889462916,
+      "Mean_Investment": 1009.7480452608834,
+      "Mean_Gain": 860.0133527076034
+    },
+    {
+      "Mean_Altruism": 0.5266666666666666,
+      "Mean_Consumption": 25368.42181173575,
+      "Mean_Investment": 1150.4346253423319,
+      "Mean_Gain": 1030.0675919128466
+    },
+    {
+      "Mean_Altruism": 0.54,
+      "Mean_Consumption": 26159.42713722499,
+      "Mean_Investment": 1221.9607710940759,
+      "Mean_Gain": 943.8376918413359
+    },
+    {
+      "Mean_Altruism": 0.47333333333333333,
+      "Mean_Consumption": 25892.473515785423,
+      "Mean_Investment": 1224.010570257946,
+      "Mean_Gain": 1094.1159222661774
+    },
+    {
+      "Mean_Altruism": 0.47333333333333333,
+      "Mean_Consumption": 25984.938649858403,
+      "Mean_Investment": 1220.1497258506308,
+      "Mean_Gain": 1033.6880120787905
+    },
+    {
+      "Mean_Altruism": 0.4266666666666667,
+      "Mean_Consumption": 24752.36836539591,
+      "Mean_Investment": 1169.7402841244755,
+      "Mean_Gain": 1129.4719719555544
+    },
+    {
+      "Mean_Altruism": 0.49333333333333335,
+      "Mean_Consumption": 24364.779838634295,
+      "Mean_Investment": 1148.1135996971998,
+      "Mean_Gain": 772.7468170299074
+    },
+    {
+      "Mean_Altruism": 0.54,
+      "Mean_Consumption": 27310.625048095415,
+      "Mean_Investment": 1385.9889550622627,
+      "Mean_Gain": 776.4120378313943
+    },
+    {
+      "Mean_Altruism": 0.49333333333333335,
+      "Mean_Consumption": 25731.62384480548,
+      "Mean_Investment": 1156.6854096190793,
+      "Mean_Gain": 947.6712387976072
+    },
+    {
+      "Mean_Altruism": 0.5666666666666667,
+      "Mean_Consumption": 25906.959496277803,
+      "Mean_Investment": 1191.0787773729344,
+      "Mean_Gain": 721.3696509001542
+    },
+    {
+      "Mean_Altruism": 0.5,
+      "Mean_Consumption": 25573.194281170057,
+      "Mean_Investment": 1161.8288319802145,
+      "Mean_Gain": 939.9487180822902
+    },
+    {
+      "Mean_Altruism": 0.52,
+      "Mean_Consumption": 24800.577852091305,
+      "Mean_Investment": 1124.6580053784069,
+      "Mean_Gain": 815.277265206709
+    },
+    {
+      "Mean_Altruism": 0.54,
+      "Mean_Consumption": 23619.42847271019,
+      "Mean_Investment": 1131.0317025982854,
+      "Mean_Gain": 757.1320912998116
+    },
+    {
+      "Mean_Altruism": 0.4866666666666667,
+      "Mean_Consumption": 27760.841817360215,
+      "Mean_Investment": 1302.4536557598824,
+      "Mean_Gain": 939.7214492482628
+    },
+    {
+      "Mean_Altruism": 0.4533333333333333,
+      "Mean_Consumption": 25732.097399087994,
+      "Mean_Investment": 1254.8973028714151,
+      "Mean_Gain": 1022.7168586250139
+    },
+    {
+      "Mean_Altruism": 0.4866666666666667,
+      "Mean_Consumption": 23556.457170240803,
+      "Mean_Investment": 1141.1342760337886,
+      "Mean_Gain": 705.2533930538091
+    },
+    {
+      "Mean_Altruism": 0.44666666666666666,
+      "Mean_Consumption": 23647.3013971669,
+      "Mean_Investment": 1145.0733485143023,
+      "Mean_Gain": 1015.3477694656173
+    },
+    {
+      "Mean_Altruism": 0.5,
+      "Mean_Consumption": 23837.940241512282,
+      "Mean_Investment": 1094.4690539625892,
+      "Mean_Gain": 917.1641226060254
+    },
+    {
+      "Mean_Altruism": 0.5333333333333333,
+      "Mean_Consumption": 23059.098302679522,
+      "Mean_Investment": 1054.554354633556,
+      "Mean_Gain": 839.9666776905235
+    },
+    {
+      "Mean_Altruism": 0.5133333333333333,
+      "Mean_Consumption": 26378.432860992158,
+      "Mean_Investment": 1208.9861686030001,
+      "Mean_Gain": 888.4084379576042
+    },
+    {
+      "Mean_Altruism": 0.5266666666666666,
+      "Mean_Consumption": 24947.328846199434,
+      "Mean_Investment": 1191.0909593181568,
+      "Mean_Gain": 739.3288141687749
+    },
+    {
+      "Mean_Altruism": 0.4266666666666667,
+      "Mean_Consumption": 26971.579091995296,
+      "Mean_Investment": 1282.4692610318016,
+      "Mean_Gain": 1394.403181469476
+    },
+    {
+      "Mean_Altruism": 0.54,
+      "Mean_Consumption": 24334.82843242598,
+      "Mean_Investment": 1143.6222893343663,
+      "Mean_Gain": 813.8190389257808
+    },
+    {
+      "Mean_Altruism": 0.52,
+      "Mean_Consumption": 26275.024140314665,
+      "Mean_Investment": 1229.6069047448,
+      "Mean_Gain": 915.8088106062642
+    },
+    {
+      "Mean_Altruism": 0.52,
+      "Mean_Consumption": 23838.70306434968,
+      "Mean_Investment": 1134.3575819226653,
+      "Mean_Gain": 838.3811488714726
+    },
+    {
+      "Mean_Altruism": 0.5333333333333333,
+      "Mean_Consumption": 24424.79876853633,
+      "Mean_Investment": 1171.9430235040518,
+      "Mean_Gain": 627.1068761076285
+    },
+    {
+      "Mean_Altruism": 0.48,
+      "Mean_Consumption": 26454.20583229244,
+      "Mean_Investment": 1250.5510108410836,
+      "Mean_Gain": 826.8777374400651
+    },
+    {
+      "Mean_Altruism": 0.4866666666666667,
+      "Mean_Consumption": 26391.908414695106,
+      "Mean_Investment": 1191.0310423862534,
+      "Mean_Gain": 1010.3673753866631
+    }
+  ],
+  "time_ms": 2451.9982950005215,
+  "telemetry": {
+    "registry_call_count": 0,
+    "registry_eval_ms_total": 8.473048997984733,
+    "cache_hit": 0,
+    "cache_miss": 0,
+    "compile_ms_total": 68.45141500161844,
+    "per_formula": {
+      "altruism_update": {
+        "calls": 200,
+        "eval_ms_total": 8.473048997984733
+      }
+    },
+    "batch_calls": 200,
+    "batch_size_avg": 150.0,
+    "persistent_cache_hits": 0
+  }
+}

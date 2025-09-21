@@ -1,0 +1,142 @@
+[
+  {
+    "name": "Progressive-Urban",
+    "proportion": 0.3,
+    "color": "#FFFFFF",
+    "initial_values": {
+      "bildung": {
+        "type": "beta",
+        "alpha": 6,
+        "beta": 2,
+        "min": null,
+        "max": null,
+        "mean": null,
+        "std_dev": null
+      },
+      "alter": {
+        "type": "uniform_int",
+        "alpha": null,
+        "beta": null,
+        "min": 20,
+        "max": 45,
+        "mean": null,
+        "std_dev": null
+      },
+      "kognitive_kapazitaet": {
+        "type": "normal",
+        "alpha": null,
+        "beta": null,
+        "min": null,
+        "max": null,
+        "mean": 0.8,
+        "std_dev": 0.1
+      },
+      "vertraeglichkeit": {
+        "type": "normal",
+        "alpha": null,
+        "beta": null,
+        "min": null,
+        "max": null,
+        "mean": 0.7,
+        "std_dev": 0.1
+      },
+      "freedom_preference": {
+        "type": "normal",
+        "alpha": null,
+        "beta": null,
+        "min": null,
+        "max": null,
+        "mean": 0.9,
+        "std_dev": 0.05
+      },
+      "altruism_factor": {
+        "type": "normal",
+        "alpha": null,
+        "beta": null,
+        "min": null,
+        "max": null,
+        "mean": 0.75,
+        "std_dev": 0.1
+      },
+      "resource_level": {
+        "type": "normal",
+        "alpha": null,
+        "beta": null,
+        "min": null,
+        "max": null,
+        "mean": 0.3,
+        "std_dev": 0.2
+      }
+    }
+  },
+  {
+    "name": "Conservative-Rural",
+    "proportion": 0.7,
+    "color": "#000000",
+    "initial_values": {
+      "bildung": {
+        "type": "uniform_int",
+        "alpha": null,
+        "beta": null,
+        "min": 20,
+        "max": 80,
+        "mean": null,
+        "std_dev": null
+      },
+      "alter": {
+        "type": "uniform_int",
+        "alpha": null,
+        "beta": null,
+        "min": 40,
+        "max": 80,
+        "mean": null,
+        "std_dev": null
+      },
+      "kognitive_kapazitaet": {
+        "type": "normal",
+        "alpha": null,
+        "beta": null,
+        "min": null,
+        "max": null,
+        "mean": 0.5,
+        "std_dev": 0.15
+      },
+      "vertraeglichkeit": {
+        "type": "beta",
+        "alpha": 3,
+        "beta": 2,
+        "min": null,
+        "max": null,
+        "mean": null,
+        "std_dev": null
+      },
+      "freedom_preference": {
+        "type": "normal",
+        "alpha": null,
+        "beta": null,
+        "min": null,
+        "max": null,
+        "mean": 0.3,
+        "std_dev": 0.1
+      },
+      "altruism_factor": {
+        "type": "normal",
+        "alpha": null,
+        "beta": null,
+        "min": null,
+        "max": null,
+        "mean": 0.4,
+        "std_dev": 0.15
+      },
+      "resource_level": {
+        "type": "normal",
+        "alpha": null,
+        "beta": null,
+        "min": null,
+        "max": null,
+        "mean": 0.1,
+        "std_dev": 0.3
+      }
+    }
+  }
+]

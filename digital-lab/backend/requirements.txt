@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+websockets
+mesa
+python-dotenv
+sympy
+prometheus_client
+cloudpickle

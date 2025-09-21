@@ -1,0 +1,351 @@
+{
+  "invalid_pin_event": {
+    "result": "error",
+    "message": "Compile failed for altruism_update@9.9.9: None"
+  },
+  "audit_tail": [
+    {
+      "action": "create_draft",
+      "formula": "altruism_update",
+      "version": "1.0.0",
+      "ts": "2025-08-28T07:39:21Z"
+    },
+    {
+      "action": "compile",
+      "formula": "altruism_update",
+      "version": "1.0.0",
+      "artifact_hash": "sha256:40536eb907d216c02f63177765694afd544b54e4e6ef3b07c591854513e01cea",
+      "ts": "2025-08-28T07:39:21Z"
+    },
+    {
+      "action": "test",
+      "formula": "altruism_update",
+      "version": "1.0.0",
+      "summary": {
+        "golden_passed": 0,
+        "golden_failed": 8
+      },
+      "ts": "2025-08-28T07:39:21Z"
+    },
+    {
+      "action": "release",
+      "formula": "altruism_update",
+      "version": "1.0.0",
+      "ts": "2025-08-28T07:39:21Z"
+    },
+    {
+      "action": "pin_update",
+      "pins": {
+        "altruism_update": "1.0.0"
+      },
+      "ts": "2025-08-28T07:39:21Z"
+    },
+    {
+      "action": "compile",
+      "formula": "altruism_update",
+      "version": "1.0.0",
+      "artifact_hash": "sha256:40536eb907d216c02f63177765694afd544b54e4e6ef3b07c591854513e01cea",
+      "ts": "2025-08-28T07:39:47Z"
+    },
+    {
+      "action": "test",
+      "formula": "altruism_update",
+      "version": "1.0.0",
+      "summary": {
+        "golden_passed": 7,
+        "golden_failed": 1
+      },
+      "ts": "2025-08-28T07:39:47Z"
+    },
+    {
+      "action": "compile",
+      "formula": "altruism_update",
+      "version": "1.0.0",
+      "artifact_hash": "sha256:40536eb907d216c02f63177765694afd544b54e4e6ef3b07c591854513e01cea",
+      "ts": "2025-08-28T07:40:14Z"
+    },
+    {
+      "action": "test",
+      "formula": "altruism_update",
+      "version": "1.0.0",
+      "summary": {
+        "golden_passed": 9,
+        "golden_failed": 0
+      },
+      "ts": "2025-08-28T07:40:14Z"
+    },
+    {
+      "action": "pin_update",
+      "pins": {
+        "altruism_update": "1.0.0"
+      },
+      "ts": "2025-08-28T07:41:01Z"
+    },
+    {
+      "action": "pin_update",
+      "pins": {
+        "altruism_update": "1.0.0"
+      },
+      "ts": "2025-08-28T07:41:18Z"
+    },
+    {
+      "action": "compile",
+      "formula": "altruism_update",
+      "version": "1.0.0",
+      "artifact_hash": "sha256:40536eb907d216c02f63177765694afd544b54e4e6ef3b07c591854513e01cea",
+      "ts": "2025-08-28T07:41:18Z"
+    },
+    {
+      "action": "pin_update",
+      "pins": {
+        "altruism_update": "1.0.0"
+      },
+      "ts": "2025-08-28T07:41:39Z"
+    },
+    {
+      "action": "compile",
+      "formula": "altruism_update",
+      "version": "1.0.0",
+      "artifact_hash": "sha256:40536eb907d216c02f63177765694afd544b54e4e6ef3b07c591854513e01cea",
+      "ts": "2025-08-28T07:41:39Z"
+    },
+    {
+      "action": "compile",
+      "formula": "altruism_update",
+      "version": "1.0.0",
+      "artifact_hash": "sha256:40536eb907d216c02f63177765694afd544b54e4e6ef3b07c591854513e01cea",
+      "ts": "2025-08-28T07:41:57Z"
+    },
+    {
+      "action": "compile",
+      "formula": "altruism_update",
+      "version": "1.0.0",
+      "artifact_hash": "sha256:40536eb907d216c02f63177765694afd544b54e4e6ef3b07c591854513e01cea",
+      "ts": "2025-08-28T07:42:31Z"
+    },
+    {
+      "action": "pin_update",
+      "pins": {
+        "altruism_update": "1.0.0"
+      },
+      "ts": "2025-08-28T07:51:19Z"
+    },
+    {
+      "action": "compile",
+      "formula": "altruism_update",
+      "version": "1.0.0",
+      "artifact_hash": "sha256:40536eb907d216c02f63177765694afd544b54e4e6ef3b07c591854513e01cea",
+      "ts": "2025-08-28T07:51:22Z"
+    },
+    {
+      "action": "pin_update",
+      "pins": {
+        "altruism_update": "1.0.0"
+      },
+      "ts": "2025-08-28T07:52:21Z"
+    },
+    {
+      "action": "compile",
+      "formula": "altruism_update",
+      "version": "1.0.0",
+      "artifact_hash": "sha256:40536eb907d216c02f63177765694afd544b54e4e6ef3b07c591854513e01cea",
+      "ts": "2025-08-28T07:52:21Z"
+    },
+    {
+      "action": "pin_update",
+      "pins": {
+        "altruism_update": "1.0.0"
+      },
+      "ts": "2025-08-28T07:52:46Z"
+    },
+    {
+      "action": "compile",
+      "formula": "altruism_update",
+      "version": "1.0.0",
+      "artifact_hash": "sha256:40536eb907d216c02f63177765694afd544b54e4e6ef3b07c591854513e01cea",
+      "ts": "2025-08-28T07:52:46Z"
+    },
+    {
+      "action": "pin_update",
+      "pins": {
+        "altruism_update": "1.0.0"
+      },
+      "ts": "2025-08-28T07:53:04Z"
+    },
+    {
+      "action": "compile",
+      "formula": "altruism_update",
+      "version": "1.0.0",
+      "artifact_hash": "sha256:40536eb907d216c02f63177765694afd544b54e4e6ef3b07c591854513e01cea",
+      "ts": "2025-08-28T07:53:04Z"
+    },
+    {
+      "action": "pin_update",
+      "pins": {
+        "altruism_update": "1.0.0"
+      },
+      "ts": "2025-08-28T07:53:17Z"
+    },
+    {
+      "action": "compile",
+      "formula": "altruism_update",
+      "version": "1.0.0",
+      "artifact_hash": "sha256:40536eb907d216c02f63177765694afd544b54e4e6ef3b07c591854513e01cea",
+      "ts": "2025-08-28T07:53:18Z"
+    },
+    {
+      "action": "pin_update",
+      "pins": {
+        "altruism_update": "1.0.0"
+      },
+      "ts": "2025-08-28T07:54:29Z"
+    },
+    {
+      "action": "compile",
+      "formula": "altruism_update",
+      "version": "1.0.0",
+      "artifact_hash": "sha256:40536eb907d216c02f63177765694afd544b54e4e6ef3b07c591854513e01cea",
+      "ts": "2025-08-28T07:54:29Z"
+    },
+    {
+      "action": "pin_update",
+      "pins": {
+        "altruism_update": "1.0.0"
+      },
+      "ts": "2025-08-28T07:55:01Z"
+    },
+    {
+      "action": "compile",
+      "formula": "altruism_update",
+      "version": "1.0.0",
+      "artifact_hash": "sha256:40536eb907d216c02f63177765694afd544b54e4e6ef3b07c591854513e01cea",
+      "ts": "2025-08-28T07:55:01Z"
+    },
+    {
+      "action": "pin_update",
+      "pins": {
+        "altruism_update": "1.0.0"
+      },
+      "ts": "2025-08-28T07:55:19Z"
+    },
+    {
+      "action": "compile",
+      "formula": "altruism_update",
+      "version": "1.0.0",
+      "artifact_hash": "sha256:40536eb907d216c02f63177765694afd544b54e4e6ef3b07c591854513e01cea",
+      "ts": "2025-08-28T07:55:19Z"
+    },
+    {
+      "action": "pin_update",
+      "pins": {
+        "altruism_update": "1.0.0"
+      },
+      "ts": "2025-08-28T07:55:57Z"
+    },
+    {
+      "action": "compile",
+      "formula": "altruism_update",
+      "version": "1.0.0",
+      "artifact_hash": "sha256:40536eb907d216c02f63177765694afd544b54e4e6ef3b07c591854513e01cea",
+      "ts": "2025-08-28T07:55:57Z"
+    },
+    {
+      "action": "pin_update",
+      "pins": {
+        "altruism_update": "1.0.0"
+      },
+      "ts": "2025-08-28T07:56:18Z"
+    },
+    {
+      "action": "compile",
+      "formula": "altruism_update",
+      "version": "1.0.0",
+      "artifact_hash": "sha256:40536eb907d216c02f63177765694afd544b54e4e6ef3b07c591854513e01cea",
+      "ts": "2025-08-28T07:56:18Z"
+    },
+    {
+      "action": "pin_update",
+      "pins": {
+        "altruism_update": "1.0.0"
+      },
+      "ts": "2025-08-28T07:57:01Z"
+    },
+    {
+      "action": "compile",
+      "formula": "altruism_update",
+      "version": "1.0.0",
+      "artifact_hash": "sha256:40536eb907d216c02f63177765694afd544b54e4e6ef3b07c591854513e01cea",
+      "ts": "2025-08-28T07:57:01Z"
+    },
+    {
+      "action": "pin_update",
+      "pins": {
+        "altruism_update": "1.0.0"
+      },
+      "ts": "2025-08-28T07:57:22Z"
+    },
+    {
+      "action": "compile",
+      "formula": "altruism_update",
+      "version": "1.0.0",
+      "artifact_hash": "sha256:40536eb907d216c02f63177765694afd544b54e4e6ef3b07c591854513e01cea",
+      "ts": "2025-08-28T07:57:23Z"
+    },
+    {
+      "action": "pin_update",
+      "pins": {
+        "altruism_update": "1.0.0"
+      },
+      "ts": "2025-08-28T07:57:57Z"
+    },
+    {
+      "action": "compile",
+      "formula": "altruism_update",
+      "version": "1.0.0",
+      "artifact_hash": "sha256:40536eb907d216c02f63177765694afd544b54e4e6ef3b07c591854513e01cea",
+      "ts": "2025-08-28T07:57:57Z"
+    },
+    {
+      "action": "pin_update",
+      "pins": {
+        "altruism_update": "1.0.0"
+      },
+      "ts": "2025-08-28T07:58:10Z"
+    },
+    {
+      "action": "compile",
+      "formula": "altruism_update",
+      "version": "1.0.0",
+      "artifact_hash": "sha256:40536eb907d216c02f63177765694afd544b54e4e6ef3b07c591854513e01cea",
+      "ts": "2025-08-28T07:58:13Z"
+    },
+    {
+      "action": "pin_update",
+      "pins": {
+        "altruism_update": "1.0.0"
+      },
+      "ts": "2025-08-28T08:05:21Z"
+    },
+    {
+      "action": "compile",
+      "formula": "altruism_update",
+      "version": "1.0.0",
+      "artifact_hash": "sha256:40536eb907d216c02f63177765694afd544b54e4e6ef3b07c591854513e01cea",
+      "ts": "2025-08-28T08:05:23Z"
+    },
+    {
+      "action": "pin_update",
+      "pins": {
+        "altruism_update": "9.9.9"
+      },
+      "ts": "2025-08-28T08:05:31Z"
+    },
+    {
+      "action": "pin_update",
+      "pins": {
+        "altruism_update": "1.0.0"
+      },
+      "ts": "2025-08-28T08:05:31Z"
+    }
+  ]
+}

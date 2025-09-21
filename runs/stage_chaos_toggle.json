@@ -1,0 +1,19 @@
+{
+  "log": [
+    {
+      "phase": "A_on_50",
+      "registry_enabled": true,
+      "step": 50
+    },
+    {
+      "phase": "B_off_restart",
+      "registry_enabled": false,
+      "step": 0
+    },
+    {
+      "phase": "C_on_restart",
+      "registry_enabled": true,
+      "step": 0
+    }
+  ]
+}

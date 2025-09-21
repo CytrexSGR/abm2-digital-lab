@@ -1,0 +1,21 @@
+name: Nightly Backup – Formulas & Audit
+
+on:
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Create backup
+        run: |
+          bash scripts/backup_formulas.sh runs
+      - name: Upload backup artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: formulas-backup
+          path: runs/backup-*.zip

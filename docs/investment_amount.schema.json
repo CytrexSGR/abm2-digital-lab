@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "investment_amount schema",
+  "type": "object",
+  "properties": {
+    "ersparnis": {"type": "number", "minimum": 0.0},
+    "risikoaversion": {"type": "number", "minimum": 0.0, "maximum": 1.0},
+    "zeitpraeferenzrate": {"type": "number", "minimum": 0.0, "maximum": 1.0},
+    "max_investment_rate": {"type": "number", "minimum": 0.0, "maximum": 1.0}
+  },
+  "required": ["ersparnis", "risikoaversion", "zeitpraeferenzrate", "max_investment_rate"],
+  "additionalProperties": false,
+  "output": {"type": "number", "minimum": 0.0},
+  "whitelist_functions": ["+", "-", "*", "Max"]
+}

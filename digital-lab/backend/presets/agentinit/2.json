@@ -1,0 +1,57 @@
+{
+  "bildung": {
+    "type": "uniform_int",
+    "min": 0,
+    "max": 100
+  },
+  "alter": {
+    "type": "uniform_int",
+    "alpha": null,
+    "beta": null,
+    "min": 18,
+    "max": 80,
+    "mean": null,
+    "std_dev": null
+  },
+  "kognitive_kapazitaet": {
+    "type": "normal",
+    "alpha": null,
+    "beta": null,
+    "min": null,
+    "max": null,
+    "mean": 0.75,
+    "std_dev": 0.15
+  },
+  "vertraeglichkeit": {
+    "type": "beta",
+    "alpha": 3,
+    "beta": 2,
+    "min": null,
+    "max": null,
+    "mean": null,
+    "std_dev": null
+  },
+  "freedom_preference": {
+    "type": "uniform_int",
+    "min": 0,
+    "max": 100
+  },
+  "altruism_factor": {
+    "type": "beta",
+    "alpha": 2,
+    "beta": 2,
+    "min": null,
+    "max": null,
+    "mean": null,
+    "std_dev": null
+  },
+  "resource_level": {
+    "type": "normal",
+    "alpha": null,
+    "beta": null,
+    "min": null,
+    "max": null,
+    "mean": 500,
+    "std_dev": 100
+  }
+}

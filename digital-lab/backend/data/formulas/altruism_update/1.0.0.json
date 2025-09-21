@@ -1,0 +1,297 @@
+{
+  "version": "1.0.0",
+  "inputs": [
+    {
+      "name": "prev_altruism",
+      "min": 0.0,
+      "max": 1.0
+    },
+    {
+      "name": "bildung",
+      "min": 0.0,
+      "max": 1.0
+    },
+    {
+      "name": "delta_u_ego"
+    },
+    {
+      "name": "delta_u_sozial"
+    },
+    {
+      "name": "env_health",
+      "min": 0.0
+    },
+    {
+      "name": "biome_capacity"
+    },
+    {
+      "name": "altruism_target_crisis",
+      "min": 0.0,
+      "max": 1.0
+    },
+    {
+      "name": "crisis_weighting_beta",
+      "min": 0.0
+    },
+    {
+      "name": "max_learning_rate_eta_max",
+      "min": 0.0
+    },
+    {
+      "name": "education_dampening_k",
+      "min": 0.0
+    }
+  ],
+  "expression": "Min(Max(prev_altruism + (max_learning_rate_eta_max/(1 + education_dampening_k*bildung)) * ((delta_u_sozial - delta_u_ego) + crisis_weighting_beta * ((altruism_target_crisis - prev_altruism) * (1 - env_health/biome_capacity))), 0.0), 1.0)",
+  "allowed_symbols": [
+    "Min",
+    "Max",
+    "+",
+    "-",
+    "*",
+    "/"
+  ],
+  "tests": {
+    "defaults": {
+      "params": {
+        "altruism_target_crisis": 0.7,
+        "crisis_weighting_beta": 0.5,
+        "max_learning_rate_eta_max": 0.2,
+        "education_dampening_k": 1.0
+      }
+    },
+    "golden": [
+      {
+        "name": "baseline_env_positive",
+        "input": {
+          "prev_altruism": 0.4,
+          "bildung": 0.5,
+          "delta_u_ego": 0.0,
+          "delta_u_sozial": 0.0,
+          "env_health": 50.0,
+          "biome_capacity": 100.0
+        },
+        "expected": 0.41,
+        "tolerance": 1e-09
+      },
+      {
+        "name": "negative_social_delta",
+        "input": {
+          "prev_altruism": 0.4,
+          "bildung": 0.5,
+          "delta_u_ego": 0.0,
+          "delta_u_sozial": -0.2,
+          "env_health": 50.0,
+          "biome_capacity": 100.0
+        },
+        "expected": 0.38333333333333336,
+        "tolerance": 1e-09
+      },
+      {
+        "name": "upper_clip",
+        "input": {
+          "prev_altruism": 0.95,
+          "bildung": 0.0,
+          "delta_u_ego": 0.1,
+          "delta_u_sozial": 0.3,
+          "env_health": 0.0,
+          "biome_capacity": 100.0
+        },
+        "params": {
+          "altruism_target_crisis": 1.0,
+          "crisis_weighting_beta": 2.0,
+          "max_learning_rate_eta_max": 0.5,
+          "education_dampening_k": 0.0
+        },
+        "expected": 1.0,
+        "tolerance": 0.0
+      },
+      {
+        "name": "lower_clip",
+        "input": {
+          "prev_altruism": 0.05,
+          "bildung": 0.0,
+          "delta_u_ego": 1.0,
+          "delta_u_sozial": 0.0,
+          "env_health": 50.0,
+          "biome_capacity": 100.0
+        },
+        "params": {
+          "altruism_target_crisis": 0.5,
+          "crisis_weighting_beta": 0.0,
+          "max_learning_rate_eta_max": 1.0,
+          "education_dampening_k": 0.0
+        },
+        "expected": 0.0,
+        "tolerance": 0.0
+      },
+      {
+        "name": "zero_update_zero_signal",
+        "input": {
+          "prev_altruism": 0.3,
+          "bildung": 0.7,
+          "delta_u_ego": 0.0,
+          "delta_u_sozial": 0.0,
+          "env_health": 100.0,
+          "biome_capacity": 100.0
+        },
+        "expected": 0.3,
+        "tolerance": 1e-12
+      },
+      {
+        "name": "education_dampens_update_A_vs_B",
+        "variants": [
+          {
+            "input": {
+              "prev_altruism": 0.4,
+              "bildung": 0.0,
+              "delta_u_ego": 0.0,
+              "delta_u_sozial": 0.0,
+              "env_health": 50.0,
+              "biome_capacity": 100.0
+            },
+            "expected": 0.415
+          },
+          {
+            "input": {
+              "prev_altruism": 0.4,
+              "bildung": 1.0,
+              "delta_u_ego": 0.0,
+              "delta_u_sozial": 0.0,
+              "env_health": 50.0,
+              "biome_capacity": 100.0
+            },
+            "expected": 0.4075
+          }
+        ],
+        "tolerance": 1e-12
+      },
+      {
+        "name": "negative_env_term_when_env_exceeds_capacity",
+        "input": {
+          "prev_altruism": 0.6,
+          "bildung": 0.5,
+          "delta_u_ego": 0.0,
+          "delta_u_sozial": 0.0,
+          "env_health": 120.0,
+          "biome_capacity": 100.0
+        },
+        "params": {
+          "altruism_target_crisis": 0.7,
+          "crisis_weighting_beta": 1.0,
+          "max_learning_rate_eta_max": 0.2,
+          "education_dampening_k": 1.0
+        },
+        "expected": 0.5973333333333334,
+        "tolerance": 1e-12
+      },
+      {
+        "name": "positive_social_delta_only",
+        "input": {
+          "prev_altruism": 0.2,
+          "bildung": 0.0,
+          "delta_u_ego": -0.05,
+          "delta_u_sozial": 0.1,
+          "env_health": 100.0,
+          "biome_capacity": 100.0
+        },
+        "expected": 0.23,
+        "tolerance": 1e-12
+      }
+    ],
+    "properties": [
+      {
+        "name": "range_is_clipped",
+        "type": "range",
+        "expr": "new_altruism",
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "name": "zero_signal_invariance",
+        "type": "equality",
+        "when": {
+          "delta_u_sozial": {
+            "equals_var": "delta_u_ego"
+          },
+          "either": [
+            {
+              "altruism_target_crisis": {
+                "equals_var": "prev_altruism"
+              }
+            },
+            {
+              "env_health": {
+                "equals_var": "biome_capacity"
+              }
+            }
+          ]
+        },
+        "expr": "new_altruism",
+        "to": {
+          "var": "prev_altruism"
+        },
+        "tolerance": 1e-12
+      },
+      {
+        "name": "monotone_in_delta_u_ego",
+        "type": "monotonic",
+        "vary": "delta_u_ego",
+        "direction": "decreasing",
+        "at": {
+          "prev_altruism": 0.4,
+          "bildung": 0.5,
+          "delta_u_sozial": 0.0,
+          "env_health": 50.0,
+          "biome_capacity": 100.0
+        }
+      },
+      {
+        "name": "monotone_in_delta_u_sozial",
+        "type": "monotonic",
+        "vary": "delta_u_sozial",
+        "direction": "increasing",
+        "at": {
+          "prev_altruism": 0.4,
+          "bildung": 0.5,
+          "delta_u_ego": 0.0,
+          "env_health": 50.0,
+          "biome_capacity": 100.0
+        }
+      },
+      {
+        "name": "education_dampening_magnitude",
+        "type": "pairwise",
+        "cases": [
+          {
+            "input": {
+              "prev_altruism": 0.4,
+              "bildung": 0.0,
+              "delta_u_ego": 0.0,
+              "delta_u_sozial": 0.0,
+              "env_health": 50.0,
+              "biome_capacity": 100.0
+            }
+          },
+          {
+            "input": {
+              "prev_altruism": 0.4,
+              "bildung": 1.0,
+              "delta_u_ego": 0.0,
+              "delta_u_sozial": 0.0,
+              "env_health": 50.0,
+              "biome_capacity": 100.0
+            }
+          }
+        ],
+        "assert": "abs(new1 - prev) >= abs(new2 - prev)"
+      }
+    ]
+  },
+  "metadata": {
+    "description": "Pilot altruism_update",
+    "created_by": "codex",
+    "released_by": "codex"
+  },
+  "status": "released"
+}

@@ -1,0 +1,16 @@
+{
+  "registry_call_count": 0,
+  "registry_eval_ms_total": 17.052309995051473,
+  "cache_hit": 0,
+  "cache_miss": 0,
+  "compile_ms_total": 43.23650199876283,
+  "per_formula": {
+    "altruism_update": {
+      "calls": 400,
+      "eval_ms_total": 17.052309995051473
+    }
+  },
+  "batch_calls": 400,
+  "batch_size_avg": 150.0,
+  "cache_hit_ratio": null
+}

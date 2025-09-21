@@ -1,0 +1,71 @@
+{
+  "note": "HTTP server not available in sandbox; RBAC enforced at endpoints.",
+  "endpoints": {
+    "put_formulas": {
+      "unauthorized": {
+        "expected": 403,
+        "actual": "not_executed"
+      },
+      "authorized": {
+        "role": "editor",
+        "expected": 200,
+        "actual": "not_executed"
+      }
+    },
+    "post_validate": {
+      "unauthorized": {
+        "expected": 403,
+        "actual": "not_executed"
+      },
+      "authorized": {
+        "role": "editor",
+        "expected": 200,
+        "actual": "not_executed"
+      }
+    },
+    "post_compile": {
+      "unauthorized": {
+        "expected": 403,
+        "actual": "not_executed"
+      },
+      "authorized": {
+        "role": "editor",
+        "expected": 200,
+        "actual": "not_executed"
+      }
+    },
+    "post_test": {
+      "unauthorized": {
+        "expected": 403,
+        "actual": "not_executed"
+      },
+      "authorized": {
+        "role": "editor",
+        "expected": 200,
+        "actual": "not_executed"
+      }
+    },
+    "post_release": {
+      "unauthorized": {
+        "expected": 403,
+        "actual": "not_executed"
+      },
+      "authorized": {
+        "role": "approver",
+        "expected": 200,
+        "actual": "not_executed"
+      }
+    },
+    "put_pins": {
+      "unauthorized": {
+        "expected": 403,
+        "actual": "not_executed"
+      },
+      "authorized": {
+        "role": "operator",
+        "expected": 200,
+        "actual": "not_executed"
+      }
+    }
+  }
+}

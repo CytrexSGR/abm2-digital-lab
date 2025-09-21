@@ -1,0 +1,45 @@
+{
+  "environment": {
+    "regions": [
+      {
+        "name": "Prosperous Metropolis",
+        "capacity": 1500.0,
+        "initial_quality_abs": 1350.0,
+        "regeneration_rate_abs": 15.0
+      },
+      {
+        "name": "Industrial Zone",
+        "capacity": 800.0,
+        "initial_quality_abs": 320.0,
+        "regeneration_rate_abs": 8.0
+      },
+      {
+        "name": "Fertile Farmland",
+        "capacity": 1200.0,
+        "initial_quality_abs": 840.0,
+        "regeneration_rate_abs": 60.0
+      },
+      {
+        "name": "Arid Hinterland",
+        "capacity": 600.0,
+        "initial_quality_abs": 300.0,
+        "regeneration_rate_abs": 6.0
+      }
+    ]
+  },
+  "agent_dynamics": {
+    "extraction": {
+      "max_factor": 0.002,
+      "sustainable_factor": 0.001
+    },
+    "learning": {
+      "altruism_target_in_crisis": 0.7,
+      "crisis_signal_weight": 0.5,
+      "eta_max": 0.01,
+      "k_bildung": 5
+    }
+  },
+  "simulation_parameters": {
+    "environmental_capacity": 1000.0
+  }
+}

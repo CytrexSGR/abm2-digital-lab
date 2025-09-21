@@ -1,0 +1,23 @@
+{
+  "status": "loaded",
+  "before": {
+    "registry_call_count": 0,
+    "registry_eval_ms_total": 0.0,
+    "cache_hit": 0,
+    "cache_miss": 0,
+    "compile_ms_total": 43.24953199829906,
+    "per_formula": {},
+    "batch_calls": 0,
+    "persistent_cache_hits": 0
+  },
+  "after": {
+    "registry_call_count": 0,
+    "registry_eval_ms_total": 0.0,
+    "cache_hit": 0,
+    "cache_miss": 0,
+    "compile_ms_total": 56.905310000729514,
+    "per_formula": {},
+    "batch_calls": 0,
+    "persistent_cache_hits": 0
+  }
+}

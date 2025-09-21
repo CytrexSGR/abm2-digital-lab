@@ -1,0 +1,12 @@
+{
+  "route": "/formulas/altruism_update",
+  "actions": [
+    "Save Draft",
+    "Validate",
+    "Compile",
+    "Test",
+    "Release (approver)",
+    "Pin (operator)"
+  ],
+  "status": "available (manual browser check)"
+}

@@ -1,0 +1,117 @@
+- attribute_distributions:
+    altruism_factor:
+      alpha: 7.0
+      beta: 3.0
+      max: null
+      mean: null
+      min: null
+      std_dev: null
+      type: beta
+    bildung:
+      alpha: 7.0
+      beta: 3.0
+      max: null
+      mean: null
+      min: null
+      std_dev: null
+      type: beta
+    freedom_preference:
+      alpha: 7.0
+      beta: 3.0
+      max: null
+      mean: null
+      min: null
+      std_dev: null
+      type: beta
+    sozialkapital:
+      alpha: null
+      beta: null
+      max: null
+      mean: 0.7
+      min: null
+      std_dev: 0.1
+      type: normal
+  color: '#3498db'
+  ideological_center:
+    economic_axis: -0.6
+    social_axis: 0.6
+  name: Links-Liberal
+  proportion: 0.3
+- attribute_distributions:
+    altruism_factor:
+      alpha: 3.0
+      beta: 7.0
+      max: null
+      mean: null
+      min: null
+      std_dev: null
+      type: beta
+    bildung:
+      alpha: 3.0
+      beta: 7.0
+      max: null
+      mean: null
+      min: null
+      std_dev: null
+      type: beta
+    freedom_preference:
+      alpha: 3.0
+      beta: 7.0
+      max: null
+      mean: null
+      min: null
+      std_dev: null
+      type: beta
+    sozialkapital:
+      alpha: null
+      beta: null
+      max: null
+      mean: 0.5
+      min: null
+      std_dev: 0.1
+      type: normal
+  color: '#e74c3c'
+  ideological_center:
+    economic_axis: 0.6
+    social_axis: -0.6
+  name: Rechts-Konservativ
+  proportion: 0.4
+- attribute_distributions:
+    altruism_factor:
+      alpha: 5.0
+      beta: 5.0
+      max: null
+      mean: null
+      min: null
+      std_dev: null
+      type: beta
+    bildung:
+      alpha: 5.0
+      beta: 5.0
+      max: null
+      mean: null
+      min: null
+      std_dev: null
+      type: beta
+    freedom_preference:
+      alpha: 5.0
+      beta: 5.0
+      max: null
+      mean: null
+      min: null
+      std_dev: null
+      type: beta
+    sozialkapital:
+      alpha: null
+      beta: null
+      max: null
+      mean: 0.6
+      min: null
+      std_dev: 0.1
+      type: normal
+  color: '#95a5a6'
+  ideological_center:
+    economic_axis: 0.0
+    social_axis: 0.0
+  name: Zentrist
+  proportion: 0.3

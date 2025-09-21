@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "investment_outcome schema",
+  "type": "object",
+  "properties": {
+    "investment_amount": {"type": "number", "minimum": 0.0},
+    "investment_return_factor": {"type": "number", "minimum": 0.0},
+    "success_indicator": {"type": "number", "minimum": 0.0, "maximum": 1.0}
+  },
+  "required": ["investment_amount", "investment_return_factor", "success_indicator"],
+  "additionalProperties": false,
+  "output": {"type": "number"},
+  "whitelist_functions": ["+", "-", "*"]
+}

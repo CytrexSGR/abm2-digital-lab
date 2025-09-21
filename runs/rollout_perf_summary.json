@@ -1,0 +1,6 @@
+{
+  "baseline_ms": 2395.8335570023337,
+  "registry_ms": 2451.9982950005215,
+  "overhead_ratio": 0.02344267106286844,
+  "registry_eval_ms_total": 8.473048997984733
+}

@@ -1,0 +1,170 @@
+name: Registry Checks
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  registry:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install backend deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r digital-lab/backend/requirements.txt
+
+      - name: Start backend
+        env:
+          FORMULA_REGISTRY_ENABLED: 'true'
+          REGISTRY_RBAC_MODE: 'enforced'
+        working-directory: digital-lab/backend
+        run: |
+          nohup uvicorn main:app --host 127.0.0.1 --port 8000 &
+          echo $! > uvicorn.pid
+          sleep 2
+
+      - name: Health check
+        run: |
+          for i in {1..20}; do curl -fsS http://127.0.0.1:8000/api/health && exit 0 || sleep 1; done; exit 1
+
+      - name: Load altruism_update draft and validate/compile/test
+        env:
+          ROLE: editor
+        run: |
+          EXP='Min(Max(prev_altruism + (max_learning_rate_eta_max/(1 + education_dampening_k*bildung)) * ((delta_u_sozial - delta_u_ego) + crisis_weighting_beta * ((altruism_target_crisis - prev_altruism) * (1 - env_health/biome_capacity))), 0.0), 1.0)'
+          read -r -d '' PAY << 'EOF'
+          {
+            "version":"1.0.0",
+            "inputs":[{"name":"prev_altruism"},{"name":"bildung"},{"name":"delta_u_ego"},{"name":"delta_u_sozial"},{"name":"env_health"},{"name":"biome_capacity"},{"name":"altruism_target_crisis"},{"name":"crisis_weighting_beta"},{"name":"max_learning_rate_eta_max"},{"name":"education_dampening_k"}],
+            "expression":"__EXPR__",
+            "allowed_symbols":["Min","Max","+","-","*","/"],
+            "tests": {}
+          }
+          EOF
+          PAYLOAD=$(echo "$PAY" | sed "s|__EXPR__|$EXP|")
+          curl -fsS -X PUT http://127.0.0.1:8000/api/formulas/altruism_update -H "Content-Type: application/json" -H "X-User-Role: $ROLE" -d "$PAYLOAD"
+          curl -fsS -X POST http://127.0.0.1:8000/api/validate -H "Content-Type: application/json" -H "X-User-Role: $ROLE" -d '{"name":"altruism_update","version":"1.0.0"}'
+          curl -fsS -X POST http://127.0.0.1:8000/api/compile -H "Content-Type: application/json" -H "X-User-Role: $ROLE" -d '{"name":"altruism_update","version":"1.0.0"}'
+          curl -fsS -X POST http://127.0.0.1:8000/api/test -H "Content-Type: application/json" -H "X-User-Role: $ROLE" -d '{"name":"altruism_update","version":"1.0.0"}'
+
+      - name: Load other formulas (consumption_rate, investment_amount, investment_outcome)
+        env:
+          ROLE: editor
+        run: |
+          # consumption_rate
+          read -r -d '' PAY1 << 'EOF'
+          {"version":"1.0.0","inputs":[{"name":"zeitpraeferenzrate"},{"name":"risikoaversion"},{"name":"base_consumption_rate"},{"name":"zeitpraeferenz_sensitivity"},{"name":"risikoaversion_sensitivity"}],"expression":"Min(Max(base_consumption_rate + (zeitpraeferenzrate - 0.5) * zeitpraeferenz_sensitivity + (risikoaversion - 0.5) * risikoaversion_sensitivity, 0.0), 1.0)","allowed_symbols":["Min","Max","+","-","*","/"],"tests":{}}
+          EOF
+          curl -fsS -X PUT http://127.0.0.1:8000/api/formulas/consumption_rate -H "Content-Type: application/json" -H "X-User-Role: $ROLE" -d "$PAY1"
+          curl -fsS -X POST http://127.0.0.1:8000/api/validate -H "Content-Type: application/json" -H "X-User-Role: $ROLE" -d '{"name":"consumption_rate","version":"1.0.0"}'
+          curl -fsS -X POST http://127.0.0.1:8000/api/compile -H "Content-Type: application/json" -H "X-User-Role: $ROLE" -d '{"name":"consumption_rate","version":"1.0.0"}'
+          curl -fsS -X POST http://127.0.0.1:8000/api/test -H "Content-Type: application/json" -H "X-User-Role: $ROLE" -d '{"name":"consumption_rate","version":"1.0.0"}'
+          # investment_amount
+          read -r -d '' PAY2 << 'EOF'
+          {"version":"1.0.0","inputs":[{"name":"ersparnis"},{"name":"risikoaversion"},{"name":"zeitpraeferenzrate"},{"name":"max_investment_rate"}],"expression":"Max( ersparnis * max_investment_rate * (1 - risikoaversion) * (1 - zeitpraeferenzrate), 0.0 )","allowed_symbols":["Min","Max","+","-","*","/"],"tests":{}}
+          EOF
+          curl -fsS -X PUT http://127.0.0.1:8000/api/formulas/investment_amount -H "Content-Type: application/json" -H "X-User-Role: $ROLE" -d "$PAY2"
+          curl -fsS -X POST http://127.0.0.1:8000/api/validate -H "Content-Type: application/json" -H "X-User-Role: $ROLE" -d '{"name":"investment_amount","version":"1.0.0"}'
+          curl -fsS -X POST http://127.0.0.1:8000/api/compile -H "Content-Type: application/json" -H "X-User-Role: $ROLE" -d '{"name":"investment_amount","version":"1.0.0"}'
+          curl -fsS -X POST http://127.0.0.1:8000/api/test -H "Content-Type: application/json" -H "X-User-Role: $ROLE" -d '{"name":"investment_amount","version":"1.0.0"}'
+          # investment_outcome
+          read -r -d '' PAY3 << 'EOF'
+          {"version":"1.0.0","inputs":[{"name":"investment_amount"},{"name":"investment_return_factor"},{"name":"success_indicator"}],"expression":"investment_amount * ( success_indicator * (investment_return_factor + 1) - 1 )","allowed_symbols":["Min","Max","+","-","*","/"],"tests":{}}
+          EOF
+          curl -fsS -X PUT http://127.0.0.1:8000/api/formulas/investment_outcome -H "Content-Type: application/json" -H "X-User-Role: $ROLE" -d "$PAY3"
+          curl -fsS -X POST http://127.0.0.1:8000/api/validate -H "Content-Type: application/json" -H "X-User-Role: $ROLE" -d '{"name":"investment_outcome","version":"1.0.0"}'
+          curl -fsS -X POST http://127.0.0.1:8000/api/compile -H "Content-Type: application/json" -H "X-User-Role: $ROLE" -d '{"name":"investment_outcome","version":"1.0.0"}'
+          curl -fsS -X POST http://127.0.0.1:8000/api/test -H "Content-Type: application/json" -H "X-User-Role: $ROLE" -d '{"name":"investment_outcome","version":"1.0.0"}'
+
+      - name: Release + Pin altruism_update
+        run: |
+          curl -fsS -X POST http://127.0.0.1:8000/api/release -H 'Content-Type: application/json' -H 'X-User-Role: approver' -d '{"name":"altruism_update","version":"1.0.0"}'
+          curl -fsS -X PUT http://127.0.0.1:8000/api/pins -H 'Content-Type: application/json' -H 'X-User-Role: operator' -d '{"pins":{"altruism_update":"1.0.0"}}'
+
+      - name: Release + Pin other formulas
+        run: |
+          curl -fsS -X POST http://127.0.0.1:8000/api/release -H 'Content-Type: application/json' -H 'X-User-Role: approver' -d '{"name":"consumption_rate","version":"1.0.0"}'
+          curl -fsS -X POST http://127.0.0.1:8000/api/release -H 'Content-Type: application/json' -H 'X-User-Role: approver' -d '{"name":"investment_amount","version":"1.0.0"}'
+          curl -fsS -X POST http://127.0.0.1:8000/api/release -H 'Content-Type: application/json' -H 'X-User-Role: approver' -d '{"name":"investment_outcome","version":"1.0.0"}'
+          curl -fsS -X PUT http://127.0.0.1:8000/api/pins -H 'Content-Type: application/json' -H 'X-User-Role: operator' -d '{"pins":{"altruism_update":"1.0.0","consumption_rate":"1.0.0","investment_amount":"1.0.0","investment_outcome":"1.0.0"}}'
+
+      - name: Baseline mini run (50 steps, 50 agents, no pin)
+        run: |
+          # clear pins to force fallback path
+          curl -fsS -X PUT http://127.0.0.1:8000/api/pins -H 'Content-Type: application/json' -H 'X-User-Role: operator' -d '{"pins":{}}'
+          curl -fsS -X POST http://127.0.0.1:8000/api/simulation/reset -H 'Content-Type: application/json' -d '{"num_agents":50,"network_connections":5}' > /dev/null
+          T0=$(date +%s%3N)
+          for i in $(seq 1 50); do curl -fsS -X POST http://127.0.0.1:8000/api/simulation/step > /dev/null; done
+          T1=$(date +%s%3N)
+          echo $((T1-T0)) > baseline_ms.txt
+
+      - name: Registry mini run (50 steps, 50 agents, pin on)
+        run: |
+          curl -fsS -X PUT http://127.0.0.1:8000/api/pins -H 'Content-Type: application/json' -H 'X-User-Role: operator' -d '{"pins":{"altruism_update":"1.0.0"}}'
+          curl -fsS -X POST http://127.0.0.1:8000/api/simulation/reset -H 'Content-Type: application/json' -d '{"num_agents":50,"network_connections":5}' > /dev/null
+          T0=$(date +%s%3N)
+          for i in $(seq 1 50); do curl -fsS -X POST http://127.0.0.1:8000/api/simulation/step > /dev/null; done
+          T1=$(date +%s%3N)
+          echo $((T1-T0)) > registry_ms.txt
+
+      - name: Overhead gate (≤ 10%) using wall clock and /metrics presence
+        run: |
+          B=$(cat baseline_ms.txt); R=$(cat registry_ms.txt)
+          echo "baseline_ms=$B registry_ms=$R"
+          if [ "$B" -eq 0 ]; then echo "Baseline ms is zero"; exit 1; fi
+          python - << 'PY'
+import sys
+B=int(open('baseline_ms.txt').read().strip())
+R=int(open('registry_ms.txt').read().strip())
+over=(R-B)/B
+print('overhead_ratio=', over)
+assert over <= 0.10, f'Overhead too high: {over}'
+PY
+          curl -fsS http://127.0.0.1:8000/metrics | grep -E 'registry_eval_ms_total|registry_batch_calls|audit_failed_total|pin_update_rejected_total'
+
+      - name: RBAC probes (expect 403 without role, 200 with)
+        run: |
+          # Unauthorized pin update (no role)
+          CODE=$(curl -s -o /dev/null -w "%{http_code}" -X PUT http://127.0.0.1:8000/api/pins -H 'Content-Type: application/json' -d '{"pins":{"altruism_update":"1.0.0"}}')
+          echo "no-role PUT /pins code=$CODE"; [ "$CODE" = "403" ]
+          # Authorized pin update
+          CODE=$(curl -s -o /dev/null -w "%{http_code}" -X PUT http://127.0.0.1:8000/api/pins -H 'X-User-Role: operator' -H 'Content-Type: application/json' -d '{"pins":{"altruism_update":"1.0.0"}}')
+          echo "operator PUT /pins code=$CODE"; [ "$CODE" = "200" ]
+          # Unauthorized release
+          CODE=$(curl -s -o /dev/null -w "%{http_code}" -X POST http://127.0.0.1:8000/api/release -H 'Content-Type: application/json' -d '{"name":"altruism_update","version":"1.0.0"}')
+          echo "no-role POST /release code=$CODE"; [ "$CODE" = "403" ]
+          # Pin invalid to trigger pin_update_rejected counter (using operator)
+          CODE=$(curl -s -o /dev/null -w "%{http_code}" -X PUT http://127.0.0.1:8000/api/pins -H 'X-User-Role: operator' -H 'Content-Type: application/json' -d '{"pins":{"altruism_update":"9.9.9"}}'); echo invalid_pin=$CODE; [ "$CODE" = "400" ]
+          curl -fsS http://127.0.0.1:8000/metrics | grep 'pin_update_rejected_total'
+
+      - name: In-process regression gate (Δ ≤ 1e-9)
+        run: |
+          python - << 'PY'
+import os, sys, random, numpy as np, json
+sys.path.insert(0,'digital-lab/backend')
+from formula_registry import registry
+from simulation_manager import manager as sim
+SEED=24680
+def run(reg_on):
+  registry.enabled=reg_on
+  random.seed(SEED); np.random.seed(SEED)
+  sim.reset_model(num_agents=50, network_connections=5)
+  series=[]
+  for _ in range(50):
+    data = sim.step_model()
+    series.append(data['model_report']['Mean_Altruism'])
+  return series
+a=run(False); b=run(True)
+mx=max(abs(x-y) for x,y in zip(a,b))
+print('max_delta', mx)
+assert mx <= 1e-9, f'Regression delta too high: {mx}'
+PY

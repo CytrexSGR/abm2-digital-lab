@@ -1,0 +1,12 @@
+{
+  "positive": {
+    "ok": true,
+    "applied": {
+      "altruism_update": "1.0.0"
+    }
+  },
+  "negative": {
+    "ok": false,
+    "error": "Invalid pins: {'ok': False, 'errors': [{'formula': 'altruism_update', 'version': '9.9.9', 'reason': 'version_not_found'}]}"
+  }
+}

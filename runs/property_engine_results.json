@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "golden": {
+    "passed": 9,
+    "failed": 0,
+    "details": []
+  },
+  "properties": {
+    "passed": 4,
+    "failed": 0,
+    "details": []
+  }
+}

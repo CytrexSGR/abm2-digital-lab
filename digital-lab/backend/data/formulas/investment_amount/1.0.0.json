@@ -1,0 +1,78 @@
+{
+  "version": "1.0.0",
+  "inputs": [
+    {
+      "name": "ersparnis"
+    },
+    {
+      "name": "risikoaversion"
+    },
+    {
+      "name": "zeitpraeferenzrate"
+    },
+    {
+      "name": "max_investment_rate"
+    }
+  ],
+  "expression": "Max( ersparnis * max_investment_rate * (1 - risikoaversion) * (1 - zeitpraeferenzrate), 0.0 )",
+  "allowed_symbols": [
+    "Min",
+    "Max",
+    "+",
+    "-",
+    "*",
+    "/"
+  ],
+  "tests": {
+    "defaults": {},
+    "golden": [
+      {
+        "name": "baseline",
+        "input": {
+          "ersparnis": 100,
+          "risikoaversion": 0.2,
+          "zeitpraeferenzrate": 0.3,
+          "max_investment_rate": 0.5
+        },
+        "expected": 28.0,
+        "tolerance": 1e-12
+      }
+    ],
+    "properties": [
+      {
+        "name": "non_negative",
+        "type": "range",
+        "min": 0.0,
+        "max": 1000000000000.0
+      },
+      {
+        "name": "monotonic_in_ersparnis",
+        "type": "monotonic",
+        "direction": "increasing",
+        "cases": [
+          {
+            "input": {
+              "ersparnis": 50,
+              "risikoaversion": 0.2,
+              "zeitpraeferenzrate": 0.3,
+              "max_investment_rate": 0.5
+            }
+          },
+          {
+            "input": {
+              "ersparnis": 100,
+              "risikoaversion": 0.2,
+              "zeitpraeferenzrate": 0.3,
+              "max_investment_rate": 0.5
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "metadata": {
+    "created_by": "codex",
+    "released_by": "codex"
+  },
+  "status": "released"
+}

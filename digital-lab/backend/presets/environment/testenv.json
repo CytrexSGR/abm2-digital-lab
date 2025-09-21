@@ -1,0 +1,16 @@
+{
+  "regions": [
+    {
+      "name": "Test Region 1",
+      "capacity": 1000,
+      "initial_quality_abs": 800,
+      "regeneration_rate_abs": 10
+    },
+    {
+      "name": "Test Region 2",
+      "capacity": 500,
+      "initial_quality_abs": 400,
+      "regeneration_rate_abs": 5
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "version": "1.0.0",
+  "inputs": [
+    {
+      "name": "investment_amount"
+    },
+    {
+      "name": "investment_return_factor"
+    },
+    {
+      "name": "success_indicator"
+    }
+  ],
+  "expression": "investment_amount * ( success_indicator * (investment_return_factor + 1) - 1 )",
+  "allowed_symbols": [
+    "Min",
+    "Max",
+    "+",
+    "-",
+    "*",
+    "/"
+  ],
+  "tests": {
+    "defaults": {},
+    "golden": [
+      {
+        "name": "success_gain",
+        "input": {
+          "investment_amount": 10.0,
+          "investment_return_factor": 0.2,
+          "success_indicator": 1
+        },
+        "expected": 2.0,
+        "tolerance": 1e-12
+      },
+      {
+        "name": "failure_loss",
+        "input": {
+          "investment_amount": 10.0,
+          "investment_return_factor": 0.2,
+          "success_indicator": 0
+        },
+        "expected": -10.0,
+        "tolerance": 1e-12
+      }
+    ],
+    "properties": []
+  },
+  "metadata": {
+    "created_by": "codex",
+    "released_by": "codex"
+  },
+  "status": "released"
+}

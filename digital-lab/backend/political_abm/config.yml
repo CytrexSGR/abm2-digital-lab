@@ -1,0 +1,191 @@
+agent_dynamics:
+  extraction:
+    max_factor: 0.002
+    sustainable_factor: 0.001
+agent_initialization:
+  alter:
+    alpha: null
+    beta: null
+    max: 80.0
+    mean: null
+    min: 18.0
+    std_dev: null
+    type: uniform_int
+  altruism_factor:
+    alpha: null
+    beta: null
+    max: null
+    mean: 0.55
+    min: null
+    std_dev: 0.18
+    type: normal
+  bildung:
+    alpha: 4.0
+    beta: 2.0
+    max: null
+    mean: null
+    min: null
+    std_dev: null
+    type: beta
+  freedom_preference:
+    alpha: null
+    beta: null
+    max: null
+    mean: 0.6
+    min: null
+    std_dev: 0.2
+    type: normal
+  kognitive_kapazitaet:
+    alpha: null
+    beta: null
+    max: null
+    mean: 0.7
+    min: null
+    std_dev: 0.15
+    type: normal
+  vertraeglichkeit:
+    alpha: 3.5
+    beta: 2.0
+    max: null
+    mean: null
+    min: null
+    std_dev: null
+    type: beta
+biomes:
+- capacity: 1500.0
+  einkommen_verteilung:
+    alpha: null
+    beta: null
+    max: null
+    mean: 10.5
+    min: null
+    std_dev: 0.6
+    type: lognormal
+  environmental_sensitivity: 1.0e-06
+  hazard_impact_factor: 0.2
+  hazard_probability: 0.01
+  initial_quality: 1350.0
+  knappheits_schwelle: 10000.0
+  name: Prosperous Metropolis
+  population_percentage: 50.0
+  produktivitaets_faktor: 1.2
+  regeneration_rate: 15.0
+  risiko_vermoegen_schwelle: 7500.0
+  sozialleistungs_niveau: 0.15
+  vermoegen_verteilung:
+    alpha: 1.5
+    beta: null
+    max: null
+    mean: null
+    min: null
+    std_dev: null
+    type: pareto
+- capacity: 800.0
+  einkommen_verteilung:
+    alpha: null
+    beta: null
+    max: null
+    mean: 10.0
+    min: null
+    std_dev: 0.5
+    type: lognormal
+  environmental_sensitivity: 5.0e-06
+  hazard_impact_factor: 0.4
+  hazard_probability: 0.05
+  initial_quality: 320.0
+  knappheits_schwelle: 7500.0
+  name: Industrial Zone
+  population_percentage: 25.0
+  produktivitaets_faktor: 1.0
+  regeneration_rate: 8.0
+  risiko_vermoegen_schwelle: 5000.0
+  sozialleistungs_niveau: 0.25
+  vermoegen_verteilung:
+    alpha: 2.0
+    beta: null
+    max: null
+    mean: null
+    min: null
+    std_dev: null
+    type: pareto
+- capacity: 1200.0
+  einkommen_verteilung:
+    alpha: null
+    beta: null
+    max: null
+    mean: 9.8
+    min: null
+    std_dev: 0.4
+    type: lognormal
+  environmental_sensitivity: 3.0e-06
+  hazard_impact_factor: 0.6
+  hazard_probability: 0.03
+  initial_quality: 840.0
+  knappheits_schwelle: 5000.0
+  name: Fertile Farmland
+  population_percentage: 12.5
+  produktivitaets_faktor: 0.8
+  regeneration_rate: 60.0
+  risiko_vermoegen_schwelle: 3000.0
+  sozialleistungs_niveau: 0.2
+  vermoegen_verteilung:
+    alpha: 2.5
+    beta: null
+    max: null
+    mean: null
+    min: null
+    std_dev: null
+    type: pareto
+- capacity: 900.0
+  einkommen_verteilung:
+    alpha: null
+    beta: null
+    max: null
+    mean: 10.0
+    min: null
+    std_dev: 0.5
+    type: lognormal
+  environmental_sensitivity: 2.0e-06
+  hazard_impact_factor: 0.3
+  hazard_probability: 0.02
+  initial_quality: 450.0
+  knappheits_schwelle: 6000.0
+  name: New Biome 4
+  population_percentage: 12.5
+  produktivitaets_faktor: 0.9
+  regeneration_rate: 20.0
+  risiko_vermoegen_schwelle: 4000.0
+  sozialleistungs_niveau: 0.2
+  vermoegen_verteilung:
+    alpha: 2.0
+    beta: null
+    max: null
+    mean: null
+    min: null
+    std_dev: null
+    type: pareto
+simulation_parameters:
+  altruism_target_crisis: 0.7
+  base_consumption_rate: 0.8
+  cognitive_moderator_capacity_weight: 0.5
+  cognitive_moderator_education_weight: 0.5
+  crisis_weighting_beta: 1.5
+  default_mean_altruism: 0.5
+  default_political_efficacy: 0.5
+  default_risk_aversion: 0.5
+  default_time_preference: 0.05
+  education_dampening_k: 5.0
+  environmental_capacity: 1000.0
+  gini_threshold_change: 0.05
+  grid_size: 100.0
+  investment_return_factor: 2.5
+  investment_success_probability: 0.5
+  max_cognitive_penalty: 0.5
+  max_investment_rate: 0.5
+  max_learning_rate_eta_max: 0.1
+  media_influence_factor: 0.05
+  resilience_bonus_factor: 0.5
+  risikoaversion_sensitivity: -0.1
+  wealth_sensitivity_factor: 10000.0
+  wealth_threshold_cognitive_stress: 5000.0
+  zeitpraeferenz_sensitivity: 0.3

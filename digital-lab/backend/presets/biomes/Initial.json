@@ -1,0 +1,130 @@
+[
+  {
+    "name": "Prosperous Metropolis",
+    "population_percentage": 50,
+    "einkommen_verteilung": {
+      "type": "lognormal",
+      "alpha": null,
+      "beta": null,
+      "min": null,
+      "max": null,
+      "mean": 10.5,
+      "std_dev": 0.6
+    },
+    "vermoegen_verteilung": {
+      "type": "pareto",
+      "alpha": 1.5,
+      "beta": null,
+      "min": null,
+      "max": null,
+      "mean": null,
+      "std_dev": null
+    },
+    "sozialleistungs_niveau": 0.15,
+    "hazard_probability": 0.01,
+    "hazard_impact_factor": 0.2,
+    "capacity": 1500,
+    "initial_quality": 1350,
+    "regeneration_rate": 15,
+    "produktivitaets_faktor": 1.2,
+    "knappheits_schwelle": 10000,
+    "risiko_vermoegen_schwelle": 7500,
+    "environmental_sensitivity": 1e-06
+  },
+  {
+    "name": "Industrial Zone",
+    "population_percentage": 25,
+    "einkommen_verteilung": {
+      "type": "lognormal",
+      "alpha": null,
+      "beta": null,
+      "min": null,
+      "max": null,
+      "mean": 10,
+      "std_dev": 0.5
+    },
+    "vermoegen_verteilung": {
+      "type": "pareto",
+      "alpha": 2,
+      "beta": null,
+      "min": null,
+      "max": null,
+      "mean": null,
+      "std_dev": null
+    },
+    "sozialleistungs_niveau": 0.25,
+    "hazard_probability": 0.05,
+    "hazard_impact_factor": 0.4,
+    "capacity": 800,
+    "initial_quality": 320,
+    "regeneration_rate": 8,
+    "produktivitaets_faktor": 1,
+    "knappheits_schwelle": 7500,
+    "risiko_vermoegen_schwelle": 5000,
+    "environmental_sensitivity": 5e-06
+  },
+  {
+    "name": "Fertile Farmland",
+    "population_percentage": 12.5,
+    "einkommen_verteilung": {
+      "type": "lognormal",
+      "alpha": null,
+      "beta": null,
+      "min": null,
+      "max": null,
+      "mean": 9.8,
+      "std_dev": 0.4
+    },
+    "vermoegen_verteilung": {
+      "type": "pareto",
+      "alpha": 2.5,
+      "beta": null,
+      "min": null,
+      "max": null,
+      "mean": null,
+      "std_dev": null
+    },
+    "sozialleistungs_niveau": 0.2,
+    "hazard_probability": 0.03,
+    "hazard_impact_factor": 0.6,
+    "capacity": 1200,
+    "initial_quality": 840,
+    "regeneration_rate": 60,
+    "produktivitaets_faktor": 0.8,
+    "knappheits_schwelle": 5000,
+    "risiko_vermoegen_schwelle": 3000,
+    "environmental_sensitivity": 3e-06
+  },
+  {
+    "name": "New Biome 4",
+    "population_percentage": 12.5,
+    "einkommen_verteilung": {
+      "type": "lognormal",
+      "alpha": null,
+      "beta": null,
+      "min": null,
+      "max": null,
+      "mean": 10,
+      "std_dev": 0.5
+    },
+    "vermoegen_verteilung": {
+      "type": "pareto",
+      "alpha": 2,
+      "beta": null,
+      "min": null,
+      "max": null,
+      "mean": null,
+      "std_dev": null
+    },
+    "sozialleistungs_niveau": 0.2,
+    "hazard_probability": 0.02,
+    "hazard_impact_factor": 0.3,
+    "capacity": 900,
+    "initial_quality": 450,
+    "regeneration_rate": 20,
+    "produktivitaets_faktor": 0.9,
+    "knappheits_schwelle": 6000,
+    "risiko_vermoegen_schwelle": 4000,
+    "environmental_sensitivity": 2e-06
+  }
+]

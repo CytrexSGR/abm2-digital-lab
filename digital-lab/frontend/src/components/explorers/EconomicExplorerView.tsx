@@ -79,10 +79,10 @@ const EconomicExplorerView: React.FC = () => {
     const currentMetrics = simulationData?.model_report || {};
 
     return (
-        <div style={{ 
-            padding: '20px', 
+        <div style={{
+            padding: '20px',
             height: '100vh',
-            overflowY: 'auto',
+            overflow: 'hidden', // Prevent scrollbar flickering
             backgroundColor: '#1a1d23'
         }}>
             {/* Header with back button */}

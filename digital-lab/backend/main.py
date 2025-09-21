@@ -2,7 +2,7 @@ import uvicorn
 import asyncio
 import os
 import json
-from fastapi import FastAPI, WebSocket, WebSocketDisconnect, HTTPException, Body, Query, Request
+from fastapi import FastAPI, WebSocket, WebSocketDisconnect, HTTPException, Body, Query, Request, Depends
 import uuid
 from fastapi.responses import FileResponse, Response
 from fastapi.middleware.cors import CORSMiddleware

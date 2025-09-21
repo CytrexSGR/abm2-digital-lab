@@ -3,20 +3,20 @@ import { AreaChart, Area, ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, To
 import { useSimulationStore } from '../../store/useSimulationStore';
 import { useDashboardStore } from '../../store/useDashboardStore';
 
+// Template colors for consistency - moved outside component to prevent re-creation
+const templateColors: Record<string, string> = {
+    'liberal': '#3498db',
+    'links': '#e74c3c',
+    'linksradikal': '#c0392b',
+    'mitte': '#95a5a6',
+    'rechts': '#f39c12',
+    'rechtsextrem': '#8e44ad',
+    'Unclassified': '#7f8c8d'
+};
+
 const PoliticalExplorerView: React.FC = () => {
     const { simulationData, history } = useSimulationStore();
     const { setActiveView } = useDashboardStore();
-
-    // Template colors for consistency
-    const templateColors: Record<string, string> = {
-        'liberal': '#3498db',
-        'links': '#e74c3c', 
-        'linksradikal': '#c0392b',
-        'mitte': '#95a5a6',
-        'rechts': '#f39c12',
-        'rechtsextrem': '#8e44ad',
-        'Unclassified': '#7f8c8d'
-    };
 
     // Prepare template distribution over time (stacked area chart)
     const templateEvolution = React.useMemo(() => {

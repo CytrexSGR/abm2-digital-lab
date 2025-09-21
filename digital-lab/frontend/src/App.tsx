@@ -12,7 +12,7 @@ function App() {
 
     // Show login form if not authenticated
     if (!isAuthenticated) {
-        return <LoginForm onLogin={login} error={error} loading={loading} />;
+        return <LoginForm onLogin={login} error={error || undefined} loading={loading} />;
     }
 
     // Show main app if authenticated

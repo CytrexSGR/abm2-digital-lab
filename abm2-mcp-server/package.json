@@ -1,0 +1,17 @@
+{
+  "name": "abm2-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP Server for ABM² Digital Lab - Exposes all simulation functions via Model Context Protocol",
+  "main": "abm2-mcp-bridge.js",
+  "scripts": {
+    "start": "node abm2-mcp-bridge.js",
+    "test": "node test-abm2-mcp.js"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "keywords": ["mcp", "abm2", "agent-based-modeling", "simulation", "claude", "http"],
+  "author": "Infinimind Creations",
+  "license": "MIT"
+}

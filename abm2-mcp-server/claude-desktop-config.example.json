@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "abm2-digital-lab": {
+      "command": "node",
+      "args": [
+        "/home/cytrex/abm2-digital-lab/abm2-mcp-server/abm2-mcp-bridge.js"
+      ],
+      "env": {
+        "ABM2_API_URL": "http://localhost:8000",
+        "ABM2_USERNAME": "admin",
+        "ABM2_PASSWORD": "your_password_here",
+        "DEBUG": "false"
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "abm2-digital-lab": {
+      "command": "wsl",
+      "args": [
+        "node",
+        "/home/cytrex/abm2-digital-lab/abm2-mcp-server/abm2-mcp-bridge.js"
+      ]
+    }
+  }
+}

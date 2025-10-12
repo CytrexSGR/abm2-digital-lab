@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "abm2-digital-lab": {
+      "command": "node",
+      "args": [
+        "C:\\abm2-mcp\\abm2-mcp-http-client.js"
+      ],
+      "env": {
+        "ABM2_MCP_SERVER_URL": "http://192.168.178.77:3002",
+        "DEBUG": "false"
+      }
+    }
+  }
+}

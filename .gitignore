@@ -154,6 +154,11 @@ Thumbs.db
 digital-lab/backend/recordings/*.csv
 digital-lab/backend/data/cache/
 digital-lab/backend/data/audit.jsonl
+digital-lab/backend/experiments/
+digital-lab/backend/data/formulas/*/draft/
+runs/*.json
+runs/*.csv
+abm2-mcp-server/.env
 
 # Jupyter Notebook
 .ipynb_checkpoints

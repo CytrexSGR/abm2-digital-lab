@@ -71,17 +71,6 @@ async def health_check():
 async def metrics_endpoint():
     return Response(content=export_prometheus(), media_type=METRICS_CONTENT_TYPE)
 
-@app.get("/api/registry/health")
-async def registry_health():
-    pins_status = formula_registry.pins_status()
-    return {
-        "status": "ok",
-        "enabled": formula_registry.enabled,
-        "schema_version": "v1",
-        "whitelist": ["+", "-", "*", "/", "Min", "Max"],
-        "pins_valid": bool(pins_status.get("validation_status", {}).get("ok", False))
-    }
-
 # --- Audit API ---
 @app.get("/api/audit")
 async def get_audit(request: Request, limit: int = 100, offset: int = 0, action: str | None = None, formula: str | None = None, version: str | None = None, since: str | None = None, until: str | None = None):

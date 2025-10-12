@@ -139,8 +139,7 @@ abm2/
 │       └── build/                # Production build output
 │
 ├── 📋 README.md                    # This documentation
-├── 🚀 SIMPLE_DEPLOYMENT.md         # Quick deployment guide
-├── 🔧 DEPLOYMENT_PRODUCTION.md     # 🆕 Comprehensive production deployment with troubleshooting
+├── 🔧 DEPLOYMENT_PRODUCTION.md     # Comprehensive production deployment with troubleshooting
 └── 📄 LICENSE                     # MIT License
 ```
 
@@ -330,9 +329,7 @@ cd ../frontend && pm2 serve build 3000 --name abm2-frontend
 pm2 save && pm2 startup
 ```
 
-For detailed deployment instructions, see:
-- **[SIMPLE_DEPLOYMENT.md](SIMPLE_DEPLOYMENT.md)** - Quick deployment guide
-- **[DEPLOYMENT_PRODUCTION.md](DEPLOYMENT_PRODUCTION.md)** - Comprehensive production deployment with troubleshooting
+For detailed deployment instructions, see **[DEPLOYMENT_PRODUCTION.md](DEPLOYMENT_PRODUCTION.md)** for comprehensive production deployment with troubleshooting.
 
 ## 🌐 API Documentation
 

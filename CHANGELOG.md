@@ -10,13 +10,43 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- Experiment runner system with statistical analysis and treatment comparison
-- MCP (Model Context Protocol) server integration for Claude Code
+
+#### MCP (Model Context Protocol) Integration ⭐ NEW
+- **40+ MCP tools** for complete simulation control via Claude Desktop
+- Natural language interface to ABM² simulation capabilities
+- Simulation control (reset, step, query state)
+- Configuration management (get, set, patch)
+- Preset management (list, load, save, delete)
+- Formula registry access (create, validate, compile, test, release)
+- Experiment runner integration (design, execute, analyze)
+- Recording & export functionality (CSV data capture)
+- Audit system access (query logs, track changes)
+- HTTP server mode for remote access
+- Comprehensive MCP integration guide (`docs/guides/mcp-integration.md`)
+
+#### Experiment Runner System
+- Multi-treatment experimental design
+- Statistical analysis with t-tests and Cohen's d effect sizes
+- Controlled computational experiments for causal inference
+- Treatment comparison with significance testing
+- Time series data collection per treatment
+- Experiment state management and persistence
+- Results export for scientific analysis
+
+#### Enhanced API Capabilities
 - Simulation history tracking (up to 1000 snapshots)
 - Agent query API with filtering and aggregations
 - Time series API for metric extraction over simulation steps
+- `/api/agents/query` endpoint with advanced filtering
+- `/api/simulation/timeseries` for temporal analysis
+
+#### Documentation & Project Cleanup
 - Environment variable configuration for frontend (`.env.example`)
 - Comprehensive project analysis and cleanup plan documents
+- MCP integration guide with 40+ tool references
+- CHANGELOG.md and CONTRIBUTING.md
+- Metadata headers on all active documentation
+- Archived pilot phase documentation (12 files)
 
 ### Changed
 - Consolidated deployment documentation (3 docs → 1)

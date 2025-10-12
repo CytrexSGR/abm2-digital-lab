@@ -24,6 +24,7 @@ A cutting-edge, web-based system for simulating and analyzing Agent-Based Models
 ## 📋 Table of Contents
 
 - [Key Features](#key-features)
+  - [MCP Integration (NEW)](#-mcp-model-context-protocol-integration--new)
 - [Technology Stack](#technology-stack)
 - [Project Structure](#project-structure)
 - [Quick Start](#quick-start)
@@ -76,6 +77,53 @@ A cutting-edge, web-based system for simulating and analyzing Agent-Based Models
 - **Environment-based Configuration**: Secure credential management
 - **Production Ready**: CORS, rate limiting, and SSL support
 
+### 🤖 MCP (Model Context Protocol) Integration ⭐ NEW
+
+**Control ABM² with natural language via Claude Desktop!**
+
+The platform features comprehensive MCP integration with **40+ tools** that enable AI-powered interaction with the simulation system. Connect Claude Desktop directly to ABM² for intuitive, conversational control of complex simulations.
+
+#### Key MCP Capabilities
+- **🎮 Simulation Control**: Reset, step, query state via natural language
+- **⚙️ Configuration Management**: Get/set/patch simulation parameters
+- **📊 Experiment Runner**: Design and execute A/B tests with statistical analysis
+- **🧮 Formula Registry**: Create, validate, compile, and release custom formulas
+- **📝 Preset Management**: Load/save/manage scenario configurations
+- **📈 Recording & Export**: CSV data capture and analysis
+- **🔍 Audit System**: Query logs and track changes
+
+#### Quick Example
+```
+User: "Start a simulation with 150 agents and run 50 steps"
+Claude: [Uses abm2_reset_simulation + abm2_step_simulation]
+        "Simulation running with 150 agents. Completed 50 steps.
+         Current Gini coefficient: 0.34"
+
+User: "Compare wealth distribution with higher altruism"
+Claude: [Uses abm2_create_experiment + abm2_run_experiment]
+        "Experiment complete. Higher altruism reduces inequality
+         by 18% (p<0.01, Cohen's d=0.67)"
+```
+
+#### Setup for Claude Desktop
+```json
+{
+  "mcpServers": {
+    "abm2-digital-lab": {
+      "command": "node",
+      "args": ["/path/to/abm2-mcp-server/abm2-mcp-bridge.js"],
+      "env": {
+        "ABM2_API_URL": "http://localhost:8000",
+        "ABM2_USERNAME": "admin",
+        "ABM2_PASSWORD": "your_password"
+      }
+    }
+  }
+}
+```
+
+**📖 Full Documentation**: [MCP Integration Guide](docs/guides/mcp-integration.md)
+
 ## 🛠️ Technology Stack
 
 ### 🐍 Backend (Python)
@@ -103,7 +151,15 @@ abm2/
 ├── 📚 docs/                         # Comprehensive documentation
 │   ├── api/                        # REST API & WebSocket reference
 │   ├── guides/                     # User & installation guides
+│   │   └── mcp-integration.md      # 🆕 MCP integration guide (40+ tools)
 │   └── architecture/               # System architecture & design
+│
+├── 🤖 abm2-mcp-server/              # 🆕 Model Context Protocol Server
+│   ├── abm2-mcp-bridge.js          # MCP server for Claude Desktop
+│   ├── abm2-mcp-http-server.js     # HTTP mode for remote access
+│   ├── package.json                # Node.js dependencies
+│   ├── README.md                   # MCP server documentation
+│   └── SETUP.md                    # Installation & configuration guide
 │
 ├── 🏭 digital-lab/                  # Main application (Refactored 2024/25)
 │   ├── 🐍 backend/                 # Python FastAPI Backend
@@ -112,13 +168,16 @@ abm2/
 │   │   ├── simulation_manager.py   # Simulation lifecycle management
 │   │   ├── connection_manager.py   # WebSocket connection management
 │   │   ├── formula_registry.py     # Dynamic formula engine
+│   │   ├── experiment_service.py   # 🆕 A/B testing & experiments
 │   │   ├── authz.py                # Authorization & security
 │   │   ├── config/                 # Modular configuration management
 │   │   ├── political_abm/          # ABM simulation core
 │   │   ├── data/                   # Data & cache management
 │   │   ├── presets/                # Predefined scenarios
 │   │   ├── recordings/             # CSV export files
+│   │   ├── experiments/            # 🆕 Experiment results & data
 │   │   ├── requirements.txt        # Python dependencies
+│   │   ├── requirements-lock.txt   # 🆕 Pinned dependency versions
 │   │   ├── .env.production         # 🆕 Production configuration
 │   │   └── README.md               # Backend documentation
 │   │
@@ -136,9 +195,12 @@ abm2/
 │       │   ├── pages/            # Page-level components
 │       │   └── types.ts          # TypeScript type definitions
 │       ├── package.json          # Frontend dependencies
+│       ├── .env.example          # 🆕 Environment variable template
 │       └── build/                # Production build output
 │
 ├── 📋 README.md                    # This documentation
+├── 📝 CHANGELOG.md                 # 🆕 Version history & release notes
+├── 🤝 CONTRIBUTING.md              # 🆕 Development & contribution guidelines
 ├── 🔧 DEPLOYMENT_PRODUCTION.md     # Comprehensive production deployment with troubleshooting
 └── 📄 LICENSE                     # MIT License
 ```

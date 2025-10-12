@@ -168,10 +168,11 @@ class ExperimentService:
         # Create isolated simulation (not using global manager to avoid conflicts)
         # Extract parameters from config
         num_agents = config.get('num_agents', 100)
+        network_connections = config.get('network_connections', 5)
 
         model = PoliticalModel(
             num_agents=num_agents,
-            network_connections=5  # TODO: Make configurable
+            network_connections=network_connections
         )
 
         # Run simulation

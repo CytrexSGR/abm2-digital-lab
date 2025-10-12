@@ -1,0 +1,34 @@
+# ABM² Digital Lab - Locked Dependencies
+# Generated: 2025-10-12
+# Python: 3.8+
+#
+# This file contains exact versions for reproducible builds.
+# Use this file for production deployments.
+#
+# Install with: pip install -r requirements-lock.txt
+
+# Core Framework
+fastapi==0.117.1
+uvicorn[standard]==0.36.0
+websockets==15.0.1
+
+# Agent-Based Modeling
+Mesa==3.3.0
+
+# Configuration & Environment
+python-dotenv==1.1.1
+
+# Scientific Computing & Formula Registry
+sympy==1.14.0
+cloudpickle==3.1.1
+
+# Monitoring & Metrics
+prometheus_client==0.23.1
+
+# Additional Dependencies (transitive, for reference)
+# These are installed automatically with the above packages:
+# - pydantic (from fastapi)
+# - starlette (from fastapi)
+# - numpy (from Mesa)
+# - networkx (from Mesa)
+# - typing-extensions (from fastapi)

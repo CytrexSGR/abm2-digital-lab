@@ -309,7 +309,6 @@ async def get_formula(name: str):
 
 @app.put("/api/formulas/{name}")
 async def put_formula(name: str, payload: dict = Body(), request: Request = None):
-    from authz import check_role
     user_role = request.headers.get('X-User-Role', '') if request else ''
     ok, reason = check_role(user_role, ["editor"])
     req_id = str(uuid.uuid4())
@@ -326,9 +325,6 @@ async def put_formula(name: str, payload: dict = Body(), request: Request = None
 async def validate_formula(payload: dict = Body(), request: Request = None):
     name = payload.get("name"); version = payload.get("version")
     user_role = request.headers.get('X-User-Role', '') if request else ''
-    ok, reason = __import__('authz').authz.check_role(user_role, ["editor"]) if False else (True, {})
-    # direct import workaround
-    from authz import check_role
     ok, reason = check_role(user_role, ["editor"])
     req_id = str(uuid.uuid4())
     if not ok:
@@ -346,7 +342,6 @@ async def validate_formula(payload: dict = Body(), request: Request = None):
 async def compile_formula(payload: dict = Body(), request: Request = None):
     name = payload.get("name"); version = payload.get("version")
     user_role = request.headers.get('X-User-Role', '') if request else ''
-    from authz import check_role
     ok, reason = check_role(user_role, ["editor"])
     req_id = str(uuid.uuid4())
     if not ok:
@@ -362,7 +357,6 @@ async def compile_formula(payload: dict = Body(), request: Request = None):
 async def test_formula(payload: dict = Body(), request: Request = None):
     name = payload.get("name"); version = payload.get("version")
     user_role = request.headers.get('X-User-Role', '') if request else ''
-    from authz import check_role
     ok, reason = check_role(user_role, ["editor"])
     req_id = str(uuid.uuid4())
     if not ok:
@@ -379,7 +373,6 @@ async def release_formula(payload: dict = Body(), request: Request = None):
     name = payload.get("name"); version = payload.get("version")
     by = payload.get("released_by", "api")
     user_role = request.headers.get('X-User-Role', '') if request else ''
-    from authz import check_role
     ok, reason = check_role(user_role, ["approver"])
     req_id = str(uuid.uuid4())
     if not ok:
@@ -410,7 +403,6 @@ async def put_pins(payload: dict = Body(), request: Request = None):
         raise HTTPException(status_code=400, detail="pins must be a mapping")
     try:
         user_role = request.headers.get('X-User-Role', '') if request else ''
-        from authz import check_role
         ok, reason = check_role(user_role, ["operator"])
         req_id = str(uuid.uuid4())
         if not ok:

@@ -1,9 +1,11 @@
 import axios from 'axios';
 
-const API_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8000';
+// API URL from environment variables (defaults to localhost for development)
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
 
 export const apiClient = axios.create({
   baseURL: API_URL,
+  timeout: 10000, // 10 second timeout
 });
 
 // Add interceptor to automatically include auth headers

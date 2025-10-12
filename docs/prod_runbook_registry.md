@@ -1,5 +1,11 @@
 # PROD Runbook – Formula Registry
 
+**Status:** Active
+**Last Updated:** 2025-10-12
+**Target Audience:** Operations Team, System Administrators
+
+---
+
 ## Start/Stop/Reset
 - Flags (ENV):
   - `FORMULA_REGISTRY_ENABLED=true|false` (toggle registry on/off)

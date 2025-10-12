@@ -1,5 +1,11 @@
 # ABM² System Architecture v3.0
 
+**Status:** Active
+**Last Updated:** 2025-10-12
+**Target Audience:** Developers, System Architects, Technical Leadership
+
+---
+
 ## Executive Summary
 
 ABM² (Agent-Based Modeling² Digital Lab) is a comprehensive political simulation platform featuring advanced Agent-Based Modeling with Formula Registry, real-time monitoring, and sophisticated visualization capabilities. The system implements a microservices-oriented architecture with clear separation between simulation core, configuration management, and presentation layers.

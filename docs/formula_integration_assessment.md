@@ -1,5 +1,11 @@
 # Bewertung: Formel-Editierung im Browser (math.js → SymPy → lambdify)
 
+**Status:** Active (Assessment Document)
+**Last Updated:** 2025-10-12
+**Target Audience:** Development Team, Technical Architects
+
+---
+
 Stand: aktuelles Repo unter `PROJECT_ROOT=/home/cytrex/abm2`
 
 ## Eignungsscore (0–5)

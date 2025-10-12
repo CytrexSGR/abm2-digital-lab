@@ -1,5 +1,11 @@
 # Benutzerhandbuch
 
+**Status:** Active
+**Last Updated:** 2025-10-12
+**Target Audience:** End Users, Researchers
+
+---
+
 ## Einführung
 
 ABM² ist eine interaktive Plattform für Agent-Based Modeling im politischen Kontext. Dieses Handbuch führt Sie durch die wichtigsten Funktionen und deren Verwendung.

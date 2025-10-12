@@ -1,5 +1,11 @@
 # Konfigurations-Handbuch
 
+**Status:** Active
+**Last Updated:** 2025-10-12
+**Target Audience:** Developers, Advanced Users
+
+---
+
 ## Überblick
 
 ABM² verwendet YAML-Konfigurationsdateien zur Definition von Simulationsparametern, Agenten-Eigenschaften und Umgebungsbedingungen. Dieses Handbuch erklärt alle verfügbaren Konfigurationsoptionen mit besonderem Fokus auf die neuen Biome-basierten und Milieu-Systeme.

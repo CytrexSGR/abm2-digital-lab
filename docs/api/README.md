@@ -1,5 +1,11 @@
 # ABM² Digital Lab - API Dokumentation
 
+**Status:** Active
+**Last Updated:** 2025-10-12
+**Target Audience:** Developers, API Consumers
+
+---
+
 ## Übersicht
 
 Das ABM² Backend bietet eine hochperformante RESTful API basierend auf FastAPI sowie WebSocket-Verbindungen für Echtzeit-Updates. Vollständig refaktoriert 2024/25 für maximale Skalierbarkeit und erweiterte Features.

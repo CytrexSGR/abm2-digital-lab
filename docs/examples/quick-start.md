@@ -1,5 +1,11 @@
 # Quick Start Beispiel
 
+**Status:** Active
+**Last Updated:** 2025-10-12
+**Target Audience:** New Users
+
+---
+
 ## Erste Simulation starten
 
 ### 1. System starten

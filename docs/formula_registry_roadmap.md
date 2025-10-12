@@ -1,5 +1,11 @@
 # Roadmap: Einführung der Formula Registry
 
+**Status:** Active
+**Last Updated:** 2025-10-12
+**Target Audience:** Development Team, Project Managers
+
+---
+
 Ziel: Konsolidierte Roadmap für Pilot, Migration weiterer Formeln, Governance‑Finalisierung und Optimierungen. Bezieht sich auf: Assessment, RNG‑Plan, Spec/Tests, API‑Contracts, Frontend‑Spec, Governance, Risiko‑Plan und Integrationsplan.
 
 ## Phasenübersicht

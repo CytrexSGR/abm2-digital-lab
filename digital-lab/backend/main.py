@@ -23,6 +23,8 @@ from config.models import FullConfig
 from metrics import export_prometheus, CONTENT_TYPE as METRICS_CONTENT_TYPE
 from authz import check_role
 from simple_auth import authenticate_user, get_current_user_info
+from experiment_service import experiment_service
+from config.experiment_models import CreateExperimentRequest
 
 # --- FastAPI App Initialization and CORS ---
 app = FastAPI()
@@ -173,6 +175,47 @@ async def get_simulation_data():
     if data:
         return data
     raise HTTPException(status_code=500, detail="Simulation model not available.")
+
+@app.post("/api/agents/query")
+async def query_agents(payload: dict = Body()):
+    """Query and filter agents with aggregations.
+
+    Example payload:
+    {
+        "filters": {
+            "vermoegen": {"min": 50000, "max": 100000},
+            "milieu": ["Links-Liberal", "Rechts-Konservativ"]
+        },
+        "fields": ["id", "vermoegen", "einkommen", "region"],
+        "limit": 50,
+        "aggregations": ["count", "mean_vermoegen", "distribution_milieu"]
+    }
+    """
+    filters = payload.get('filters', None)
+    fields = payload.get('fields', None)
+    limit = payload.get('limit', 100)
+    aggregations = payload.get('aggregations', None)
+
+    result = simulation_manager.query_agents(filters, fields, limit, aggregations)
+    if result:
+        return result
+    raise HTTPException(status_code=500, detail="Simulation model not available.")
+
+@app.get("/api/simulation/timeseries")
+async def get_time_series(
+    metrics: List[str] = Query(..., description="Metric paths (e.g., model_report.Gini_Vermoegen)"),
+    start_step: int = Query(0, description="Starting step"),
+    end_step: Optional[int] = Query(None, description="Ending step (null = current)")
+):
+    """Get time series data for specified metrics over simulation steps.
+
+    Example:
+        /api/simulation/timeseries?metrics=model_report.Gini_Vermoegen&metrics=model_report.Mean_Altruism&start_step=0
+    """
+    result = simulation_manager.get_time_series(metrics, start_step, end_step)
+    if result:
+        return result
+    raise HTTPException(status_code=500, detail="No simulation history available.")
 
 # --- Recording Management Endpoints ---
 
@@ -557,6 +600,77 @@ async def delete_preset(section_name: str, preset_name: str):
         return {"message": f"Preset '{preset_name}' for section '{section_name}' deleted."}
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error deleting preset: {e}")
+
+
+# --- Experiment Runner Endpoints ---
+
+@app.post("/api/experiments")
+async def create_experiment(request: CreateExperimentRequest, user: dict = Depends(get_current_user_info)):
+    """Create a new computational experiment with treatments."""
+    try:
+        experiment = experiment_service.create_experiment(request)
+        return experiment.model_dump()
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error creating experiment: {e}")
+
+@app.get("/api/experiments")
+async def list_experiments():
+    """List all experiments (sorted by creation date, newest first)."""
+    try:
+        experiments = experiment_service.list_experiments()
+        return [exp.model_dump() for exp in experiments]
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error listing experiments: {e}")
+
+@app.get("/api/experiments/{experiment_id}")
+async def get_experiment(experiment_id: str):
+    """Get experiment definition by ID."""
+    experiment = experiment_service.get_experiment(experiment_id)
+    if not experiment:
+        raise HTTPException(status_code=404, detail="Experiment not found")
+    return experiment.model_dump()
+
+@app.post("/api/experiments/{experiment_id}/run")
+async def run_experiment(experiment_id: str, user: dict = Depends(get_current_user_info)):
+    """Execute all treatments of an experiment.
+
+    WARNING: This can take several minutes for experiments with many runs!
+    Returns full results including statistical tests.
+    """
+    try:
+        results = experiment_service.run_experiment(experiment_id)
+        return results.model_dump()
+    except ValueError as e:
+        raise HTTPException(status_code=404, detail=str(e))
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error running experiment: {e}")
+
+@app.get("/api/experiments/{experiment_id}/results")
+async def get_experiment_results(experiment_id: str):
+    """Get results of a completed experiment."""
+    results = experiment_service.get_results(experiment_id)
+    if not results:
+        raise HTTPException(status_code=404, detail="Results not found. Has the experiment been run?")
+    return results.model_dump()
+
+@app.get("/api/experiments/{experiment_id}/compare")
+async def compare_treatments_endpoint(experiment_id: str, metric: str = "gini"):
+    """Get statistical comparison between treatments for a specific metric.
+
+    Available metrics: gini, avg_wealth, avg_income, mean_altruism, top10_share
+    """
+    results = experiment_service.get_results(experiment_id)
+    if not results:
+        raise HTTPException(status_code=404, detail="Results not found")
+
+    # Filter tests for requested metric
+    relevant_tests = [test for test in results.statistical_tests if test.metric == metric]
+
+    return {
+        "experiment_id": experiment_id,
+        "metric": metric,
+        "comparisons": [test.model_dump() for test in relevant_tests]
+    }
 
 
 # --- WebSocket Endpoint ---

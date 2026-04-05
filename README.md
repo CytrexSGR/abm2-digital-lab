@@ -569,3 +569,13 @@ If you encounter issues during installation or deployment:
 [![Contributors](https://img.shields.io/github/contributors/infinimind-creations/abm2-digital-lab)](#)
 
 </div>
+
+---
+
+## Authors
+
+**Andreas** — Architecture, Design, Direction
+**[Claude Code](https://claude.ai/code)** (Anthropic) — Implementation Partner
+
+> This project was built using vibe coding — human vision and AI implementation working as equals.
+
